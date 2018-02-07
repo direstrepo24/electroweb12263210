@@ -1,0 +1,63 @@
+@viewModel electroweb.ViewModels.ViewModelInventario, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+  
+<bp:GridView ID="data" DataSource="{value: Elementos}"
+       UserSettings="{value: UserSettings}"
+       AllowReorderColumns="true"
+             InlineEditing="true">
+    <Columns>
+        <bp:GridViewTextColumn ColumnName="Id"
+                               ValueBinding="{value: Id}"
+                               HeaderText="Id" />
+        <bp:GridViewTextColumn ColumnName="CodigoApoyo"
+                               ValueBinding="{value: CodigoApoyo}"
+                               HeaderText="Cod Apoyo" />
+        <bp:GridViewTextColumn ColumnName="NumeroApoyo"
+                               ValueBinding="{value: NumeroApoyo}"
+                               HeaderText="Numero Apoyo" />
+        <bp:GridViewTextColumn ColumnName="FechaLevantamiento"
+                               ValueBinding="{value: FechaLevantamiento}"
+                              FormatString="dd.MM.yyyy"
+                               HeaderText="Fecha Levantamiento" />
+        <bp:GridViewTextColumn ColumnName="HoraInicio"
+                               ValueBinding="{value: HoraInicio}"
+                               HeaderText="Hora Inicio" />
+        <bp:GridViewTextColumn ColumnName="HoraFin"
+                               ValueBinding="{value: HoraFin}"
+                               HeaderText="Hora Fin" />
+        <bp:GridViewTextColumn ColumnName="ResistenciaMecanica"
+                               ValueBinding="{value: ResistenciaMecanica}"
+                               HeaderText="Resistencia Mecanica" />
+        <bp:GridViewTextColumn ColumnName="Retenidas"
+                               ValueBinding="{value: Retenidas}"
+                               HeaderText="Retenidas" />   
+         <bp:GridViewTextColumn ColumnName="AlturaDisponible"
+                               ValueBinding="{value: AlturaDisponible}"
+                               HeaderText="Altura Disponible" /> 
+         <bp:GridViewTextColumn ColumnName="Proyecto"
+                               ValueBinding="{value: Proyecto.Nombre}"
+                               HeaderText="Proyecto" />  
+        <bp:GridViewTextColumn ColumnName="Material"
+                               ValueBinding="{value: Material.Nombre}"
+                               HeaderText="Material" />  
+         <bp:GridViewTextColumn ColumnName="LongitudElemento"
+                               ValueBinding="{value: LongitudElemento.Valor}"
+                               HeaderText="Long Elemento" />  
+          <bp:GridViewTextColumn ColumnName="Estado"
+                               ValueBinding="{value: Estado.Nombre}"
+                               HeaderText="Estado" />  
+           <bp:GridViewTextColumn ColumnName="NivelTensionElemento"
+                               ValueBinding="{value: NivelTensionElemento.Nombre}"
+                               HeaderText="Nivel Tension Elemento" />                                                                                                                                                   
+    </Columns>
+</bp:GridView>
+<bp:DataPager DataSet="{value: Elementos}" class="pager" />
+<bp:Button  Text="Exportar .csv" Click="{command: Export()}" />
+<bp:Button  Text="Exportar Detalles" Click="{command: ExportDetail()}" />
+<bp:Button  Text="Exportar PDF" Click="{command: ExportPDF()}" />
+<bp:Button  Text="Exportar Exceel" Click="{command: ExportExcel()}" />
+<bp:Button  Text="Exportar con Fotos" Click="{command: ExportFotos()}" />
+<a href="/Report">PDF </a>
+</dot:Content>

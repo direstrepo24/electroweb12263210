@@ -1,0 +1,30 @@
+@viewModel electroweb.ViewModels.BaseViewModel, electroweb
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+	
+     <menu>
+         <li>
+                <dot:RouteLink RouteName="Default" Text="Homepage"/>
+        </li> 
+        
+        <li>
+          <dot:RouteLink RouteName="SampleA" Text="TextBox sample" />
+        </li>
+        <li>
+          <dot:RouteLink RouteName="SampleB" Text="Literal sample" />
+        </li>
+         <li>
+            <dot:RouteLink  RouteName="About" Text="About"/>  
+        </li> 
+    </menu>
+
+    <dot:SpaContentPlaceHolder ID="Sample" DefaultRouteName="SampleA" />
+
+</body>
+</html>

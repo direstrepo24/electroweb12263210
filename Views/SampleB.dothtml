@@ -1,0 +1,6 @@
+@viewModel electroweb.ViewModels.ViewModelB, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+  <dot:TextBox Text="{value: Text}"  />
+</dot:Content>

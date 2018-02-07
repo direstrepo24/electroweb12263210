@@ -1,0 +1,126 @@
+@viewModel electroweb.ViewModels.ViewModelAdministrator, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+        <div class="row jumbotron">
+        <div class="col-lg-12">
+
+              <!--LIST FILTERS-->
+            <bp:ComboBox DataSource="{value: FilterTypes}"
+             SelectedValue="{value: SelectedFilterType}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Tipo filtro"
+             Changed="{command: FiltroChange()}">
+                <ItemTemplate>
+                    <p>{{value: Id}}. {{value: Nombre}}</p>
+                </ItemTemplate>
+            </bp:ComboBox>
+
+            <!--FILTER BY CIUDAD-->
+            
+            <bp:ComboBox Visible="{{value:Is_Visible_By_Ciudad}}" DataSource="{value: Departamentos}"
+             SelectedValue="{value: SelectedDeparment}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Please select departamento"
+             Changed="{command: DepartmentChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+            </bp:ComboBox>
+
+
+             <bp:ComboBox Visible="{{value:Is_Visible_By_Ciudad}}"  DataSource="{value: Ciudades}"
+             SelectedValue="{value: SelectedCiudad}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Por favor seleccione ciudad"
+             Changed="{command: CiudadChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+            </bp:ComboBox>
+
+            <!--FILTER BY NUMERO APOYO-->
+                <div style="display: inline-block">
+                <dot:UpdateProgress>
+                    <img  width="50" src="/Images/gif_cargando.gif">
+                </dot:UpdateProgress>
+         </div>
+      
+
+
+        <bp:DataPager DataSet="{value: ListElementosGridView}"
+              PageSize="{value: PageSize}" />
+
+
+         <bp:GridView class="table"  PostBack.Update="true" DataSource="{value: ListElementosGridView}">
+            <Columns>
+              
+
+                  <bp:GridViewTextColumn ColumnName="Id"
+                                    ValueBinding="{value: Id}"
+                                    HeaderText="Numero Apoyo" />
+                                    
+                <bp:GridViewTextColumn ColumnName="CodigoApoyo"
+                                    ValueBinding="{value: CodigoApoyo}"
+                                    HeaderText="Cod Apoyo" />
+               
+                <bp:GridViewTextColumn ColumnName="FechaLevantamiento"
+                                    ValueBinding="{value: FechaLevantamiento}"
+                                    FormatString="dd/MM/yyyy"
+                                    HeaderText="Fecha Levantamiento" />
+                <bp:GridViewTextColumn ColumnName="HoraInicio"
+                                    ValueBinding="{value: HoraInicio}"
+                                    HeaderText="Hora Inicio" />
+                <bp:GridViewTextColumn ColumnName="HoraFin"
+                                    ValueBinding="{value: HoraFin}"
+                                    HeaderText="Hora Fin" />
+                <bp:GridViewTextColumn ColumnName="ResistenciaMecanica"
+                                    ValueBinding="{value: ResistenciaMecanica}"
+                                    HeaderText="Resistencia Mecanica" />
+                <bp:GridViewTextColumn ColumnName="Retenidas"
+                                    ValueBinding="{value: Retenidas}"
+                                    HeaderText="Retenidas" />   
+                <bp:GridViewTextColumn ColumnName="AlturaDisponible"
+                                    ValueBinding="{value: AlturaDisponible}"
+                                    HeaderText="Altura Disponible" /> 
+                <bp:GridViewTextColumn ColumnName="Nombre_Proyecto"
+                                    ValueBinding="{value:Nombre_Proyecto}"
+                                    HeaderText="Proyecto" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Material"
+                                    ValueBinding="{value: Nombre_Material}"
+                                    HeaderText="Material" />  
+                <bp:GridViewTextColumn ColumnName="Longitud"
+                                    ValueBinding="{value: Longitud}"
+                                    HeaderText="Long Elemento" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Estado"
+                                    ValueBinding="{value: Nombre_Estado}"
+                                    HeaderText="Estado" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Nivel_Tension"
+                                    ValueBinding="{value: Nombre_Nivel_Tension}"
+                                    HeaderText="Nivel Tension Elemento" />     
+            </Columns>
+        </bp:GridView>
+
+<!--
+            <bp:AutoComplete 
+            Visible="{{value:Is_Visible_By_Numero_Apoyo}}"
+            Text="{value: ElementoReportViewModel}"
+                 DataSource="{value: Elementos}"
+                 ItemTextBinding="{value: Elemento_Id}"
+                 Placeholder="Elementos">
+              
+                  <ItemTemplate>
+                  <span >{{value: Elemento_Id}}. {{value: CodigoApoyo}}</span>
+            </ItemTemplate>
+            </bp:AutoComplete>-->
+
+        
+        </div>
+    </div>
+</dot:Content>
+
+	
+

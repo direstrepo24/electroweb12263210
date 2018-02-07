@@ -1,0 +1,237 @@
+@viewModel electroweb.ViewModels.ViewModelReporteGeneral, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+        <div class="row jumbotron">
+        <div class="col-lg-12">
+             <bp:ComboBox DataSource="{value: Departamentos}"
+             SelectedValue="{value: SelectedDeparment}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Please select departamento"
+             Changed="{command: DepartmentChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+
+         <bp:ComboBox DataSource="{value: Ciudades}"
+             SelectedValue="{value: SelectedCiudad}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Por favor seleccione ciudad"
+             Changed="{command: CiudadChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+        <bp:ComboBox DataSource="{value: Empresas}"
+             SelectedValue="{value: SelectedEmpresa}"
+             ItemKeyBinding="{value: Empresa.Id}"
+             ItemTextBinding="{value: Empresa.Nombre}"
+             Placeholder="Por favor seleccione empresa"
+             Changed="{command: EmpresaChange()}">
+            <ItemTemplate>
+                <p>{{value: Empresa.Id}}. {{value: Empresa.Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+       <!-- <h5>Ciudad seleccionada: {{value: SelectedCiudad.Nombre}}, {{value: SelectedDeparment.Nombre}}</h5>-->
+
+        
+
+        <dot:Button    class="btn btn-warning click btn-xs" Click="{command: Consultar()}"  Text="Consultar"  >
+         </dot:Button>
+         <div style="display: inline-block">
+                <dot:UpdateProgress>
+                    <img  width="50" src="/Images/gif_cargando.gif">
+                </dot:UpdateProgress>
+         </div>
+
+        <table class="table">
+            <tbody>
+                <tr >
+                <th><h5> <strong>Total Postes  {{value: SelectedCiudad.Nombre}}, {{value: SelectedDeparment.Nombre}}  ({{value: SelectedEmpresa.Empresa.Nombre}}): </strong> </h5></th>
+                <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: TotalInventarioElemento}}</strong></button></th>
+                <th><h4>100%</h4></th>
+                   <th></th>
+                </tr>
+                <tr >
+                <th><h5> <strong>Total Ocupaciones  {{value: SelectedCiudad.Nombre}}, {{value: SelectedDeparment.Nombre}}: </strong> </h5></th>
+                <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: TotalInventarioOcupacines}}</strong></button></th>
+                <th><h4>100%</h4></th>
+                 <th></th>
+                </tr>
+                 <tr >
+                <th><h5> <strong>Recaudo Total Anual  : </strong> </h5></th>
+                <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: ValorAnualRecaudoTotal}}</strong></button></th>
+                <th><h5> <strong>Recaudo Total Mensual  : </strong> </h5></th>
+                <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: ValorMensualRecaudoTotal}}</strong></button></th>
+                </tr>
+
+            
+            </tbody>
+        </table> 
+        <h3>Clasificación</h3>
+
+        
+
+
+        <!--
+         <dot:Repeater  DataSource="{value: Cities}"
+         >
+            <table class="table">
+                <tbody>
+                    <tr >
+                    <th><h5> <strong>{{value: Name}} </strong> </h5></th>
+                    <th><button type="button" class="btn btn-outline-warning"><strong> {{value: Country}}</strong></button></th>
+                    <th><h4>100%</h4></th>
+                    </tr>
+                
+                </tbody>
+            </table> 
+         </dot:Repeater>-->
+
+
+         <bp:GridView class="table" DataSource="{value: Report}">
+            <Columns>
+              
+
+                 <bp:GridViewTemplateColumn     HeaderText="Operador">
+                    <ContentTemplate>
+                                <dot:Button class="btn btn-outline-primary btn-lg btn-block" Text="{{value: Operador}}" Click="{command: _parent.ViewModalDisplay(_this)}"/>
+                    
+                             
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+                <bp:GridViewTemplateColumn 
+                                    HeaderText="Total Postes"
+                                    AllowSorting="true"
+                                    >
+                                    <ContentTemplate>
+                   
+
+                    <span class="btn btn-link btn-lg btn-block">{{value: Apoyos}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+
+                <bp:GridViewTemplateColumn 
+                                    HeaderText="Total Ocupaciones"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: Ocupaciones}}</span>
+                    </ContentTemplate>
+                
+                </bp:GridViewTemplateColumn>
+                                 
+               <bp:GridViewTemplateColumn 
+                                    HeaderText="Porcentaje Ocupaciones"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: Porcentaje}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+
+     
+
+                <bp:GridViewTemplateColumn 
+                                    HeaderText="Recaudo Total Anual Ocupaciones"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: RecaudoAnual}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+
+
+            
+                <bp:GridViewTemplateColumn 
+                                    HeaderText="Recaudo Total Mensual Ocupaciones"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: RecaudoMensual}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+
+
+
+            </Columns>
+        </bp:GridView>
+
+        <bp:ModalDialog IsDisplayed="{value: IsModalDisplayed}">
+           <table class="table">
+            <tbody>
+                <tr >
+                <th>
+                    <h5> <strong>Operador:   </strong> </h5>
+
+                </th>
+                 <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: SelectedReportGeneralViewModel.Operador}}</strong></button></th>
+                </tr>
+                <tr >
+                <th><h5> <strong>Total Postes:  </strong> </h5></th>
+                  <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: SelectedReportGeneralViewModel.Apoyos}}</strong></button></th>
+                </tr>
+                  <tr >
+                <th><h5> <strong>Total Ocupaciones  : </strong> </h5></th>
+                  <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: SelectedReportGeneralViewModel.Ocupaciones}}</strong></button></th>
+                </tr>
+                <tr >
+                <th><h5> <strong>Recaudo Total Anual  :</strong> </h5></th>
+                  <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: SelectedReportGeneralViewModel.RecaudoAnual}}</strong></button></th>
+                </tr>
+                 <tr >
+                <th><h5> <strong>Recaudo Total Mensual  :</strong> </h5></th>
+                  <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: SelectedReportGeneralViewModel.RecaudoMensual}}</strong></button></th>
+                </tr>
+            </tbody>
+        </table> 
+        <h3>Clasificación</h3>
+          <bp:GridView class="table" DataSource="{value: ListReportLongitud}">
+            <Columns>
+              
+
+                 <bp:GridViewTemplateColumn   HeaderText="Longitud"
+                                    AllowSorting="true" >
+                    <ContentTemplate >
+                              <span class="btn btn-link btn-lg btn-block">{{value: Longitud_Elemento}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+                <bp:GridViewTemplateColumn 
+                                    HeaderText="Total Ocupaciones"
+                                    AllowSorting="true"
+                                    >
+                                    <ContentTemplate>
+
+                    <span class="btn btn-link btn-lg btn-block">{{value: Total_Ocupaciones}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+
+                <bp:GridViewTemplateColumn 
+                                    HeaderText="Valor Norma"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: ValorAnualNorma}}</span>
+                    </ContentTemplate>
+                
+                </bp:GridViewTemplateColumn>
+                                 
+               <bp:GridViewTemplateColumn 
+                                    HeaderText="Recaudo"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: Recaudo_Longitud}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+            </Columns>
+        </bp:GridView>
+
+        </bp:ModalDialog>
+
+        </div>
+    </div>
+</dot:Content>
+
+	
+

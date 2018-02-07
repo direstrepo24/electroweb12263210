@@ -1,0 +1,5 @@
+/Users/torrefuertesas/dev/electro/electroweb
+--output-path=obj/Debug/netcoreapp2.0/
+--application-name=electroweb
+--content-root=/Users/torrefuertesas/dev/electro/electroweb
+--file=

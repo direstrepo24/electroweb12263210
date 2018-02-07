@@ -1,0 +1,55 @@
+@viewModel electroweb.ViewModels.ViewModelEmpresa, electroweb
+@masterPage Views/app.dotmaster
+
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+ <%-- Templated header and footer --%>
+<bp:Panel>
+    <HeaderTemplate>
+        <h3>Cable Operadores</h3>
+    </HeaderTemplate>
+    <ContentTemplate>
+        <bp:GridView ID="data" DataSource="{value: Empresas}"
+            UserSettings="{value: UserSettings}"
+            AllowReorderColumns="true"
+                    InlineEditing="true">
+            <Columns>
+                <bp:GridViewTextColumn ColumnName="Id"
+                                    ValueBinding="{value: Id}"
+                                    HeaderText="Id"
+                                    IsEditable="false"/>
+                <bp:GridViewTextColumn ColumnName="Nombre"
+                                    ValueBinding="{value: Nombre}"
+                                    HeaderText="Nombre" />
+                <bp:GridViewTextColumn ColumnName="Direccion"
+                                    ValueBinding="{value: Direccion}"
+                                    HeaderText="Direccion" />
+                <bp:GridViewTextColumn ColumnName="Telefono"
+                                    ValueBinding="{value: Telefono}"
+                                    HeaderText="Telefono" />
+                <bp:GridViewTextColumn ColumnName="Nit"
+                                    ValueBinding="{value: Nit}"
+                                    HeaderText="Nit" />
+                <bp:GridViewTextColumn ColumnName="Is_Operadora"
+                                    ValueBinding="{value: Is_Operadora}"
+                                    HeaderText="Is_Operadora" />
+                <bp:GridViewTemplateColumn ColumnName="Edit"   >
+                    
+                    <ContentTemplate>
+                        <dot:Button Text="Editar" Click="{command: _parent.EditEmpresa(_this)}"/>
+                    </ContentTemplate>
+                    <EditTemplate>
+                        <dot:Button Text="Guardar" Click="{command: _parent.UpdateEmpresa(_this)}"/>
+                        <dot:Button Text="Cancelar" Click="{command: _parent.CancelEditEmpresa()}"/>
+                    </EditTemplate>
+                </bp:GridViewTemplateColumn>
+            </Columns>
+        </bp:GridView>
+    </ContentTemplate>
+    <FooterTemplate>
+        <i>www.interedes.com.co</i>
+    </FooterTemplate>
+</bp:Panel>
+
+
+</dot:Content>

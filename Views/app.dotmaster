@@ -1,0 +1,89 @@
+@viewModel electroweb.ViewModels.BaseViewModel, electroweb
+
+<!DOCTYPE html>
+
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Panel</title>
+     
+    <dot:RequiredResource  Name="style"/>
+    <dot:RequiredResource  Name="bootstrrap"/>
+    <dot:RequiredResource  Name="cards"/>
+
+</head>
+<body class="background">
+
+  
+  <header>
+    <div class="bs-component">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Interedes</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <dot:RouteLink RouteName="Default" class="{value: 'nav-link ' + (ActivePage == 'Default' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-th"></span> Home
+              </dot:RouteLink>
+            </li>
+           
+            <li>
+              <dot:RouteLink RouteName="About" class="{value: 'nav-link ' + (ActivePage == 'About' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-user"></span> Estadisticas
+              </dot:RouteLink>
+            </li>
+            <li>
+              <dot:RouteLink RouteName="Empresa" class="{value: 'nav-link ' + (ActivePage == 'Empresa' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-time"></span>Cable Operadores
+              </dot:RouteLink>
+            </li>
+            <li>
+              <dot:RouteLink RouteName="ReportDetalle" class="{value: 'nav-link ' + (ActivePage == 'ReportDetalle' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-file"></span> Inventario
+              </dot:RouteLink>
+            </li>
+            <li>
+              <dot:RouteLink RouteName="ReportUsuario" class="{value: 'nav-link ' + (ActivePage == 'ReportUsuario' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-user"></span> Usuarios
+              </dot:RouteLink>
+            </li>
+
+            <li>
+              <dot:RouteLink RouteName="ReportNovedades" class="{value: 'nav-link ' + (ActivePage == 'ReportNovedades' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-user"></span> Novedades
+              </dot:RouteLink>
+            </li>
+
+           <!-- <li>
+              <dot:RouteLink RouteName="Administrador" class="{value: 'nav-link ' + (ActivePage == 'Administrador' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-user"></span> Administrador
+              </dot:RouteLink>
+            </li>-->
+
+
+            <!--  <li>
+              <dot:RouteLink RouteName="ReportDetalleImages" class="{value: 'nav-link ' + (ActivePage == 'ReportDetalleImages' ? 'header-item-active' : '')}">
+                <span class="glyphicon glyphicon-user"></span> Ejemplos
+              </dot:RouteLink>
+            </li>-->
+            
+          </ul>
+        </div>
+      </nav>
+    </div>
+   
+    </header>
+
+    <main>
+        <h1>
+             <dot:SpaContentPlaceHolder ID="TitleContent" DefaultRouteName="Default" />
+        </h1>
+    </main> 
+</body>
+ <dot:RequiredResource  Name="jquery_min"/>
+ <dot:RequiredResource  Name="bootstrap_min"/>
+ <dot:RequiredResource  Name="settings"/>
+</html>

@@ -1,0 +1,150 @@
+@viewModel electroweb.ViewModels.ViewModelReportUsuario, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+    
+<%-- Templated header and footer --%>
+<bp:Panel>
+    <HeaderTemplate>
+        <h3>Consulta de inventario por usuario</h3>
+    </HeaderTemplate>
+    <ContentTemplate>
+
+        <bp:ComboBox DataSource="{value: Departamentos}"
+             SelectedValue="{value: SelectedDeparment}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Please select departamento"
+             Changed="{command: DepartmentChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+
+         <bp:ComboBox DataSource="{value: Ciudades}"
+             SelectedValue="{value: SelectedCiudad}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Por favor seleccione ciudad"
+             Changed="{command: CiudadChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+         <bp:ComboBox DataSource="{value: Usuarios}"
+             SelectedValue="{value: SelectedUsuario}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Porfavor seleccione usuario"
+             Changed="{command: UserChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}} {{value: Apellido}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+       
+        <p>Usuario seleccionado: {{value: SelectedUsuario.Nombre}} {{value: SelectedUsuario.Apellido}}</p>
+
+        <p>Fecha de inicio</p>
+        <bp:DateTimePicker 
+        title="Fecha Inicio"
+        SelectedDate="{value: SelectedDateStart}"
+                   SelectionCompleted="{command: DateChange()}"
+                   Mode="Date" />
+        
+        <p>Fecha de fin</p>
+        <bp:DateTimePicker 
+        title="Fecha Inicio"
+        SelectedDate="{value: SelectedDateEnd}"
+                    SelectionCompleted="{command: DateChange()}"
+                   Mode="Date" />
+
+        <p>Fecha: <dot:Literal Text="{value: SelectedDateStart}" FormatString="dd/MM/yyyy" /> a <dot:Literal Text="{value: SelectedDateEnd}" FormatString="dd/MM/yyyy" /></p>
+        
+         <bp:RadioButton CheckedItem="{value: ReportType}" Changed="{command: ReportTypeChange()}"  CheckedValue="General" Text="General" />
+        <bp:RadioButton CheckedItem="{value: ReportType}"  Changed="{command: ReportTypeChange()}"  Visible="{value: VisibleRadioButtonDetallado}" CheckedValue="Detallado" Text="Detallado" />
+
+        <p>Tipo Reporte: {{value: ReportType}}</p>
+
+        <bp:Button  Text="Consultar" Click="{command: Consultar()}" />
+         <div style="display: inline-block">
+                <dot:UpdateProgress>
+                    <img  width="50" src="/Images/gif_cargando.gif">
+                </dot:UpdateProgress>
+         </div>
+
+        <bp:Button  Visible="{value: IsVisibleExportPdf}"  Text="Exportar  General (PDF)" Click="{command: ExportPdf()}" />
+         <bp:Button  Visible="{value: IsVisibleExportPdf}"  Text="Exportar Contabilidad (PDF)" Click="{command: ExportPdfUserPostes()}" />
+        <bp:Button  Visible="{value: IsVisibleExportPdf}"  Text="Exportar Excel" Click="{command: ExportExcel()}" />
+        
+        <!-- <bp:GridView PostBack.Update="true" ID="data" DataSource="{value: Elementos}"-->
+
+        <bp:GridView ID="data" DataSource="{value: Elementos}" class="table  table-hover" RenderSettings.Mode="Server" PostBack.Update="true"
+            UserSettings="{value: UserSettings}"
+            AllowReorderColumns="true"
+                    InlineEditing="true">
+            <Columns>
+             
+                <bp:GridViewTextColumn ColumnName="Id"
+                                    ValueBinding="{value: Id}"
+                                    HeaderText="Numero Apoyo" />
+                                    
+                <bp:GridViewTextColumn ColumnName="Usuario"
+                                    ValueBinding="{value: Usuario}"
+                                    HeaderText="Usuario" />
+                <bp:GridViewTextColumn ColumnName="CodigoApoyo"
+                                    ValueBinding="{value: CodigoApoyo}"
+                                    HeaderText="Cod Apoyo" />
+                <bp:GridViewTextColumn ColumnName="FechaLevantamiento"
+                                    ValueBinding="{value: FechaLevantamiento}"
+                                    FormatString="dd.MM.yyyy"
+                                    HeaderText="Fecha Levantamiento" />
+                <bp:GridViewTextColumn ColumnName="HoraInicio"
+                                    ValueBinding="{value: HoraInicio}"
+                                    HeaderText="Hora Inicio" />
+                <bp:GridViewTextColumn ColumnName="HoraFin"
+                                    ValueBinding="{value: HoraFin}"
+                                    HeaderText="Hora Fin" />
+                <bp:GridViewTextColumn ColumnName="ResistenciaMecanica"
+                                    ValueBinding="{value: ResistenciaMecanica}"
+                                    HeaderText="Resistencia Mecanica" />
+                <bp:GridViewTextColumn ColumnName="Retenidas"
+                                    ValueBinding="{value: Retenidas}"
+                                    HeaderText="Retenidas" />   
+                <bp:GridViewTextColumn ColumnName="AlturaDisponible"
+                                    ValueBinding="{value: AlturaDisponible}"
+                                    HeaderText="Altura Disponible" /> 
+                <bp:GridViewTextColumn ColumnName="Nombre_Proyecto"
+                                    ValueBinding="{value: Nombre_Proyecto}"
+                                    HeaderText="Proyecto" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Material"
+                                    ValueBinding="{value: Nombre_Material}"
+                                    HeaderText="Nombre_Material" />  
+                <bp:GridViewTextColumn ColumnName="Longitud"
+                                    ValueBinding="{value: Longitud}"
+                                    HeaderText="Long Elemento" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Estado"
+                                    ValueBinding="{value: Nombre_Estado}"
+                                    HeaderText="Estado" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Nivel_Tension"
+                                    ValueBinding="{value: Nombre_Nivel_Tension}"
+                                    HeaderText="Nivel Tension Elemento" />  
+                <bp:GridViewTextColumn ColumnName="Coordenadas_Elemento"
+                                    ValueBinding="{value: Coordenadas_Elemento}"
+                                    HeaderText="Coordenadas" />                                                                                                                                                   
+            </Columns>
+            <EmptyDataTemplate>
+                <bp:Alert Type="Danger"
+                    Text="No se encontraron resultados..." >
+                </bp:Alert>
+		    </EmptyDataTemplate>
+        </bp:GridView>
+    </ContentTemplate>
+    <FooterTemplate>
+        <i>www.interedes.com.co</i>
+    </FooterTemplate>
+</bp:Panel>
+
+
+</dot:Content>

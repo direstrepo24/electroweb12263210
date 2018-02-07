@@ -1,0 +1,349 @@
+
+/// Default colors
+@color-template: #E6750F;
+@color-primary: #337ab7;
+@color-secondary: #337ab7;
+@color-font: #141414;
+@color-font-hover: @color-template;
+@color-font-active: #fff;
+@color-font-disabled: #808080;
+@color-placeholder: grey;
+@color-background: #fff;
+@color-background-input: @color-background;
+@color-background-disable: #eee;
+@color-background-hover: lighten(@color-template, 40%);
+@color-background-selected: lighten(@color-template, 30%);
+@color-outline: lighten(@color-template, 20%);
+@color-border: #ddd;
+@color-border-hover: lighten(@color-template, 40%);
+@color-border-disabled: #4d4d4d;
+@color-error: #ec4646;
+@color-info: #d9edf7;
+@color-info-text: darken(saturate(@color-info, 50), 55%);
+@color-warning: #fcf8e3;
+@color-warning-text: darken(saturate(@color-warning, 100), 48%);
+@color-danger: #f2dede;
+@color-danger-text: darken(saturate(@color-danger, 60), 43%);
+@color-success: #dff0d8;
+@color-success-text: darken(saturate(@color-success, 60), 52%);
+
+/// Typography
+@font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+@font-icons: 'FontAwesome';
+@font-size: 13px;
+
+/// Variables
+@bootstrap-theme: true;
+@transitions-enabled: true;
+@transition-type: ease-in-out;
+@transition-time: 0.3s;
+@border-width: 1px;
+@border-radius: 4px;
+@padding-top-down: 2px;
+@padding-left-right: 5px;
+@hover-darken: 20%;
+@hover-lighten: 20%;
+@outline-width: 1px;
+@animations-enabled: false;
+
+/// Z-indexes
+@dropdown-z-index: 1001;
+@overlay-z-index: 1040;
+@modal-dialog-z-index: 9999;
+
+/// Alerts
+@alert-font-size: 16px;
+@alert-padding: 15px;
+@alert-margin: 0 0 16px 0;
+@alert-icon-padding: 7.5px;
+@alert-border-width: 1px;
+@alert-border-radius: 4px;
+@alert-border-color-info: #bce8f1;
+@alert-border-color-warning: #faebcc;
+@alert-border-color-danger: #ebccd1;
+@alert-border-color-success: #d6e9c6;
+@alert-icon-color-info: #31708f;
+@alert-icon-color-warning: #8a6d3b;
+@alert-icon-color-danger: #a94442;
+@alert-icon-color-success: #3c763d;
+@alert-font-color-info: #31708f;
+@alert-font-color-warning: #8a6d3b;
+@alert-font-color-danger: #a94442;
+@alert-font-color-success: #3c763d;
+@alert-background-info: #d9edf7;
+@alert-background-warning: #fcf8e3;
+@alert-background-danger: #f2dede;
+@alert-background-success: #dff0d8;
+
+/// Button
+@button-font-size: 14px;
+@button-font-weight: 400;
+@button-font-color: @color-font;
+@button-font-color-hover: @color-font;
+@button-text-transform: none;
+@button-background: #E0E0E0;
+@button-background-gradient: true;
+@button-background-hover: darken(@button-background, 5%);
+@button-padding-top-down: 6px;
+@button-padding-left-right: 12px;
+@button-border-width: @border-width;
+@button-border-radius: 4px;
+@button-border-color: @color-border;
+@button-border-color-hover: @color-border;
+@button-primary-background: #337ab7;
+@button-primary-background-hover: #286090;
+@button-primary-border-color: #2e6da4;
+@button-primary-border-color-hover: #204d74;
+@button-primary-font-color: white;
+@button-primary-font-color-hover: white;
+@button-secondary-background: @color-background;
+@button-secondary-background-hover: @color-template;
+@button-secondary-border-color: @color-template;
+@button-secondary-border-color-hover: @color-template;
+@button-secondary-font-color: @color-template;
+@button-secondary-font-color-hover: @color-font-active;
+@button-info-background: #5bc0de;
+@button-info-background-hover: #31b0d5;
+@button-info-border-color: #46b8da;
+@button-info-border-color-hover: #269abc;
+@button-info-font-color: white;
+@button-info-font-color-hover: white;
+@button-danger-background: #d9534f;
+@button-danger-background-hover: #c9302c;
+@button-danger-border-color: #d43f3a;
+@button-danger-border-color-hover: #ac2925;
+@button-danger-font-color: white;
+@button-danger-font-color-hover: white;
+@button-warning-background: #f0ad4e;
+@button-warning-background-hover: #ec971f;
+@button-warning-border-color: #eea236;
+@button-warning-border-color-hover: #d58512;
+@button-warning-font-color: white;
+@button-warning-font-color-hover: white;
+@button-success-background: #5cb85c;
+@button-success-background-hover: #449d44;
+@button-success-border-color: #4cae4c;
+@button-success-border-color-hover: #398439;
+@button-success-font-color: white;
+@button-success-font-color-hover: white;
+
+/// Calendar & DateTime picker
+@calendar-width: 240px;
+@calendar-height: 220px;
+@calendar-border-radius: @border-radius;
+@calendar-date-number-border-radius: 4px;
+@calendar-popup-top-margin: (@border-width + 2px);
+@calendar-background: @color-background;
+@calendar-background-selection: @color-background-selected;
+@calendar-background-inactive: @color-background-disable;
+@calendar-background-weekend: @color-background;
+@calendar-background-hover: #f5f5f5;
+@calendar-background-error: @color-error;
+@calendar-font-size: 13px;
+@calendar-font-color: @color-font;
+@calendar-font-color-hover: @color-font;
+@calendar-font-color-selected: @color-font-active;
+@calendar-font-color-inactive: lighten(@color-font, 40%);
+@calendar-font-color-other-month: lighten(@color-font, 40%);
+@calendar-font-color-header: black;
+@calendar-font-color-header-days: reddarken(@color-template, 20%);
+@calendar-font-color-not-possible: #ececec;
+
+/// CheckBox
+@checkbox-size: @font-size;
+@checkbox-font-size: @font-size;
+@checkbox-border-width: @border-width;
+@checkbox-border-color: @color-border;
+@checkbox-border-color-hover: #999;
+@checkbox-border-radius: 2px;
+@checkbox-icon-color: black;
+@checkbox-icon-color-hover: darken(#999, 10%);
+@checkbox-background: @color-background-input;
+
+/// DataPager
+@data-pager-font-size: 16px;
+@data-pager-padding: 8px 12px;
+@data-pager-margin: 10px 0 0 0;
+@data-pager-background: @color-background;
+@data-pager-background-hover: #f5f5f5;
+@data-pager-background-active: #f5f5f5;
+@data-pager-border-width: 1px;
+@data-pager-border-color: @color-border;
+@data-pager-border-radius: 4px;
+@data-pager-font-color: @color-template;
+@data-pager-font-color-active: @color-font-hover;
+@data-pager-font-color-hover: @color-font-hover;
+
+/// Dropdown menu
+@dropdown-padding: 5px 2px;
+@dropdown-top-margin: (@border-width + 1);
+@dropdown-item-padding: 2px;
+@dropdown-item-margin: 0;
+@dropdown-font-size: @font-size;
+@dropdown-font-color: @color-font;
+@dropdown-font-color-active: @color-font-active;
+@dropdown-font-color-hover: @color-font-hover;
+@dropdown-background-active: @color-template;
+@dropdown-background-hover: @color-background-hover;
+@dropdown-border-hover-width: @border-width;
+@dropdown-border-hover-color: darken(@color-background-hover, 15%);
+
+/// File Upload
+@file-upload-uploaded-width: 250px;
+@file-upload-padding: 5px 2px;
+@file-upload-border-width: @border-width;
+@file-upload-border-style: dashed;
+@file-upload-border-color: @color-border;
+@file-upload-border-radius: 0px;
+@file-upload-files-background: @color-background-input;
+
+/// Grid View
+@grid-view-margin: 5px auto;
+@grid-view-header-color: white;
+@grid-view-header-font-size: 13px;
+@grid-view-header-font-color: black;
+@grid-view-header-padding: 7px 14px;
+@grid-view-line-text-align: left;
+@grid-view-line-color-odd: @color-background;
+@grid-view-line-color-even: white;
+@grid-view-line-color-hover: @color-background-hover;
+@grid-view-line-padding: 7px 14px;
+@grid-view-footer-color: #efefef;
+@grid-view-footer-text-align: right;
+@grid-view-footer-padding: 2px;
+
+/// Input
+@input-width: 250px;
+@input-padding-top-down: 8px;
+@input-padding-left-right: 12px;
+@input-font-size: 16px;
+@input-border-width: @border-width;
+@input-border-radius: 4px;
+@input-border-color: @color-border;
+@input-background-color: @color-background;
+
+/// ListView
+@list-view-border: @border-width solid @color-border;
+@list-view-padding: 10px;
+@list-view-item-max-width: 100px;
+@list-view-item-padding: 6px;
+@list-view-icon-size: 2rem;
+@list-view-font-size: @font-size;
+@list-view-font-color: @color-font;
+@list-view-font-color-hover: @color-font-hover;
+@list-view-item-background: @color-background;
+@list-view-item-background-hover: @color-background-hover;
+@list-view-active-background: @color-background-selected;
+@list-view-active-font-color: @color-font-active;
+@list-view-item-border: @border-width solid transparent;
+@list-view-item-border-hover: @border-width solid @color-background-hover;
+
+/// Modal Dialog & Window
+@modal-background-color: @color-background;
+@modal-border-radius: 4.8px;
+@modal-border-width: 1px;
+@modal-border-color: @color-border;
+@modal-paddings: 15px;
+@modal-header-font-size: 20px;
+@modal-header-font-color: rgb(41, 43, 44);
+@modal-body-font-size: 16px;
+@modal-body-font-color: @color-font;
+@modal-footer-font-size: @font-size;
+@modal-footer-text-align: right;
+@modal-footer-font-color: @color-font;
+
+/// Multiselect
+@multiselect-width: (@input-width * 2);
+@multiselcet-min-height: 0;
+@multiselect-padding: 0;
+@multiselect-border-width: @input-border-width;
+@multiselect-border-color: @input-border-color;
+@multiselect-border-radius: @input-border-radius;
+@multiselect-item-margin: 1px;
+@multiselect-item-padding: 5px 8px;
+@multiselect-icon-padding-left: 5px;
+@multiselect-item-font-size: 15px;
+@multiselect-item-font-color: black;
+@multiselect-item-background: #fefefe;
+@multiselect-item-border-width: @border-width;
+@multiselect-item-border-color: #eee;
+
+/// Panel
+@panel-border: @border-width solid @color-border;
+@panel-border-radius: 3px;
+@panel-margin: 5px;
+@panel-header-padding: 10px 8px;
+@panel-header-background: #f7f7f7;
+@panel-header-font-size: 16px;
+@panel-header-font-color: @color-template;
+@panel-content-padding-top-down: 20px;
+@panel-content-padding-left-right: 8px;
+@panel-content-background: @color-background;
+@panel-footer-background: #f7f7f7;
+@panel-footer-padding: 5px 8px;
+
+/// Rating
+@rating-size: 18px;
+@rating-items-margin: 0;
+@rating-color: #999;
+@rating-color-hover: darken(#999, 15%);
+
+/// RadioButton
+@radio-button-size: @checkbox-size;
+@radio-button-font-size: @checkbox-font-size;
+@radio-button-border-width: @checkbox-border-width;
+@radio-button-border-color: @color-border;
+@radio-button-border-color-hover: #999;
+@radio-button-icon-color: black;
+@radio-button-icon-color-hover: @checkbox-icon-color-hover;
+@radio-button-background: @color-background-input;
+
+/// Slider & RangeSlider
+@slider-height: 10px;
+@slider-width: 100%;
+@slider-border-radius: 4px;
+@slider-grip-size: 20px;
+@slider-grip-border-width: 2px;
+@slider-grip-border-color: @color-template;
+@slider-grip-border-color-hover: @slider-grip-border-color;
+@slider-grip-radius: 100%;
+@slider-color-background: #eee;
+@slider-color-grip: @color-template;
+@slider-color-grip-hover: @color-template;
+@slider-color-selected: #c1c1c1;
+
+/// Tab Control
+@tab-control-items-padding: 8px 16px;
+@tab-control-items-border-width: @border-width;
+@tab-control-items-border-sides-width: 1px;
+@tab-control-items-border-top-radius: 4px;
+@tab-control-items-margin-right: 0;
+@tab-control-items-margin-bottom: (@tab-control-items-border-width * -1);
+@tab-control-content-padding: 10px;
+@tab-control-content-text-align: left;
+@tab-control-content-background: @color-background;
+@tab-control-background-active: @color-background;
+@tab-control-background-hover: #eee;
+@tab-control-border-color: #ddd;
+@tab-control-border-color-hover: #eee #eee #ddd;
+@tab-control-font-color: @color-template;
+@tab-control-font-color-active: #777;
+@tab-control-font-hover: #777;
+
+/// TreeView
+@tree-view-border: @border-width solid @color-border;
+@tree-view-padding: 10px;
+@tree-view-list-padding-left: 30px;
+@tree-view-icon-size: 12px;
+@tree-view-item-padding-left: 4px;
+@tree-view-item-padding-top-down: 2px;
+@tree-view-item-margin: 2px;
+@tree-view-font-size: @font-size;
+@tree-view-font-color: @color-font;
+@tree-view-font-color-hover: @color-font-hover;
+@tree-view-item-background: @color-background;
+@tree-view-item-background-hover: @color-background-hover;
+@tree-view-active-background: @color-background-selected;
+@tree-view-active-font-color: @color-font-active;
+@tree-view-item-border: @border-width solid transparent;
+@tree-view-item-border-hover: @border-width solid @color-background-hover;

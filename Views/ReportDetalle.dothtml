@@ -1,0 +1,178 @@
+@viewModel electroweb.ViewModels.ViewModelElemento, electroweb
+
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+  
+ <%-- Templated header and footer --%>
+<bp:Panel >
+      
+    <HeaderTemplate>
+        <h3>Consulta de reportes</h3>
+    </HeaderTemplate>
+    <ContentTemplate>
+        <!--
+        <bp:ComboBox DataSource="{value: Departamentos}"
+             SelectedValue="{value: SelectedDeparment}"
+             ItemTextBinding="{value: Nombre}"
+             ItemKeyBinding="{value: Id}"
+             Placeholder="Please select Departamento" />
+
+        <p>Selected Departamento: {{value: SelectedDeparment.Nombre}}</p>-->
+
+
+
+        <bp:ComboBox DataSource="{value: Departamentos}"
+             SelectedValue="{value: SelectedDeparment}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Please select departamento"
+             Changed="{command: DepartmentChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+
+         <bp:ComboBox DataSource="{value: Ciudades}"
+             SelectedValue="{value: SelectedCiudad}"
+             ItemKeyBinding="{value: Id}"
+             ItemTextBinding="{value: Nombre}"
+             Placeholder="Por favor seleccione ciudad"
+             Changed="{command: CiudadChange()}">
+            <ItemTemplate>
+                <p>{{value: Id}}. {{value: Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+        <bp:ComboBox DataSource="{value: Empresas}"
+             SelectedValue="{value: SelectedEmpresa}"
+             ItemKeyBinding="{value: Empresa.Id}"
+             ItemTextBinding="{value: Empresa.Nombre}"
+             Placeholder="Por favor seleccione empresa"
+             Changed="{command: EmpresaChange()}">
+            <ItemTemplate>
+                <p>{{value: Empresa.Id}}. {{value: Empresa.Nombre}}</p>
+            </ItemTemplate>
+        </bp:ComboBox>
+
+        <p>Ciudad seleccionada: {{value: SelectedCiudad.Nombre}}, {{value: SelectedDeparment.Nombre}}</p>
+
+        <p>Fecha de inicio</p>
+        <bp:DateTimePicker 
+        title="Fecha Inicio"
+        SelectedDate="{value: SelectedDateStart}"
+                   SelectionCompleted="{command: DateChange()}"
+                   Mode="Date" />
+        
+        <p>Fecha de fin</p>
+        <bp:DateTimePicker 
+        title="Fecha Inicio"
+        SelectedDate="{value: SelectedDateEnd}"
+                    SelectionCompleted="{command: DateChange()}"
+                   Mode="Date" />
+
+        <p>Fecha: <dot:Literal Text="{value: SelectedDateStart}" FormatString="dd/MM/yyyy" /> a <dot:Literal Text="{value: SelectedDateEnd}" FormatString="dd/MM/yyyy" /></p>
+        
+        <bp:RadioButton CheckedItem="{value: ReportType}" Changed="{command: ReportTypeChange()}"  CheckedValue="General" Text="General" />
+        <bp:RadioButton CheckedItem="{value: ReportType}"  Changed="{command: ReportTypeChange()}"  Visible="{value: VisibleRadioButtonDetallado}" CheckedValue="Detallado" Text="Detallado" />
+
+        <p>Tipo Reporte: {{value: ReportType}}</p>
+
+         <dot:Button    class="btn btn-warning click" Click="{command: Consultar()}"  Text="Consultar"  >
+         </dot:Button>
+
+         <div style="display: inline-block">
+                <dot:UpdateProgress>
+                    <img  width="50" src="/Images/gif_cargando.gif">
+                </dot:UpdateProgress>
+         </div>
+
+
+
+      
+          
+        <bp:Button Visible="{value: IsVisibleExportExcell}"   Text="Exportar Excel" Click="{command: LLenarExcel()}" />
+        <bp:Button  Visible="{value: IsVisibleExportPdf}"  Text="Exportar Pdf" Click="{command: ExportPdf()}" />
+         <!--  <bp:Button  Text="Reporte Detallado" Click="{command: ExportDetalladoPdf()}" />
+        <bp:Button  Text="Exportar Excel" Click="{command: ExportExcel()}" />-->
+<!-- <bp:GridView PostBack.Update="true" ID="data" DataSource="{value: Elementos}"-->
+        <bp:GridView  ID="data" DataSource="{value: Elementos}"
+            UserSettings="{value: UserSettings}"
+            AllowReorderColumns="true"
+                    InlineEditing="true">
+            <Columns>
+                <bp:GridViewTextColumn ColumnName="Elemento_Id"
+                                    ValueBinding="{value: Elemento_Id}"
+                                    HeaderText="Numero Apoyo" />
+                                    
+                <bp:GridViewTextColumn ColumnName="CodigoApoyo"
+                                    ValueBinding="{value: CodigoApoyo}"
+                                    HeaderText="Cod Apoyo" />
+               
+                <bp:GridViewTextColumn ColumnName="FechaLevantamiento"
+                                    ValueBinding="{value: FechaLevantamiento}"
+                                    FormatString="dd.MM.yyyy"
+                                    HeaderText="Fecha Levantamiento" />
+                <bp:GridViewTextColumn ColumnName="HoraInicio"
+                                    ValueBinding="{value: HoraInicio}"
+                                    HeaderText="Hora Inicio" />
+                <bp:GridViewTextColumn ColumnName="HoraFin"
+                                    ValueBinding="{value: HoraFin}"
+                                    HeaderText="Hora Fin" />
+                <bp:GridViewTextColumn ColumnName="ResistenciaMecanica"
+                                    ValueBinding="{value: ResistenciaMecanica}"
+                                    HeaderText="Resistencia Mecanica" />
+                <bp:GridViewTextColumn ColumnName="Retenidas"
+                                    ValueBinding="{value: Retenidas}"
+                                    HeaderText="Retenidas" />   
+                <bp:GridViewTextColumn ColumnName="AlturaDisponible"
+                                    ValueBinding="{value: AlturaDisponible}"
+                                    HeaderText="Altura Disponible" /> 
+                <bp:GridViewTextColumn ColumnName="Nombre_Proyecto"
+                                    ValueBinding="{value:Nombre_Proyecto}"
+                                    HeaderText="Proyecto" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Material"
+                                    ValueBinding="{value: Nombre_Material}"
+                                    HeaderText="Material" />  
+                <bp:GridViewTextColumn ColumnName="Longitud"
+                                    ValueBinding="{value: Longitud}"
+                                    HeaderText="Long Elemento" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Estado"
+                                    ValueBinding="{value: Nombre_Estado}"
+                                    HeaderText="Estado" />  
+                <bp:GridViewTextColumn ColumnName="Nombre_Nivel_Tension"
+                                    ValueBinding="{value: Nombre_Nivel_Tension}"
+                                    HeaderText="Nivel Tension Elemento" />     
+                <bp:GridViewTextColumn ColumnName="SobreRbt"
+                                    ValueBinding="{value: SobreRbt}"
+                                    HeaderText="SobreRbt" />  
+                 <bp:GridViewTextColumn ColumnName="Tiene_Marquilla"
+                                    ValueBinding="{value: Tiene_Marquilla}"
+                                    HeaderText="Tiene Marquilla" />                                                                                                                                                      
+            </Columns>
+            <EmptyDataTemplate>
+                <bp:Alert Type="Danger"
+                  
+                    Text="No se encontraron resultados..." >
+                </bp:Alert>
+		    </EmptyDataTemplate>
+        </bp:GridView>
+
+
+    
+        <!--<bp:Button  Text="Exportar con Fotos" Click="{command: ExportDetalle()}" />
+
+        <bp:Button  Text="Exportar HTML" Click="{command: ExportDetalleHtml()}" />-->
+        
+
+    </ContentTemplate>
+    <FooterTemplate>
+        <i>www.interedes.com.co</i>
+    </FooterTemplate>
+
+  
+  
+</bp:Panel>
+
+</dot:Content>

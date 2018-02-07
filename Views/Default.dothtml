@@ -1,0 +1,163 @@
+@viewModel electroweb.ViewModels.DefaultViewModel, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+        <!--Sitio Admin en Construcción -->
+         <div class="row">
+          
+          <div class="col-lg-12 text-center">
+         <img src="Images/logo.png" width="40%"/>
+          </div>
+         </div>
+       
+        <div class="row">
+          
+          <div class="col-lg-3">
+            <div class="wrapper">
+              <div class="clash-card archer">
+                <div class="clash-card__image clash-card__image--archer">
+                  <img width="50%" src="Images/item1.png" alt="archer" />
+                </div>
+                <div class="clash-card__level clash-card__level--archer">Postes</div>
+                <div class="clash-card__unit-name">Inventario</div>
+                <div class="clash-card__unit-description">
+                 <h5> {{value: TotalPostes}}</h5>
+                  <br>
+                   <br>
+                </div>
+
+                <div class="clash-card__unit-stats clash-card__unit-stats--archer clearfix">
+                  <div class="one-third">
+                    <div class="stat"><sup></sup></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                  <div class="one-third">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                  <div class="one-third no-border">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+                </div>
+              </div> <!-- end clash-card archer-->
+            </div> <!-- end wrapper -->
+          </div>
+          <div class="col-lg-3">
+            <div class="wrapper">
+              <div class="clash-card goblin">
+                <div class="clash-card__image clash-card__image--goblin">
+                  <img src="Images/item4.png" alt="goblin" />
+                </div>
+                <div class="clash-card__level clash-card__level--goblin">Ciudades</div>
+                <div class="clash-card__unit-name">Ciudades</div>
+                  <div class="clash-card__unit-description">
+                   <h5>{{value: CiudadesInventariadas}}</h5>
+                   <br>
+                   <br>
+                </div>
+
+                <div class="clash-card__unit-stats clash-card__unit-stats--goblin clearfix">
+                  <div class="one-third">
+                    <div class="stat"><sup></sup></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                  <div class="one-third">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                  <div class="one-third no-border">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                </div>
+
+              </div> <!-- end clash-card goblin-->
+            </div> <!-- end wrapper -->
+          </div>
+          <div class="col-lg-3">
+            <div class="wrapper">
+              <div class="clash-card wizard">
+                <div class="clash-card__image clash-card__image--wizard">
+                  <img src="Images/item5.png" alt="wizard" />
+                </div>
+                <div class="clash-card__level clash-card__level--wizard">Novedades</div>
+                <div class="clash-card__unit-name">Clasificacion</div>
+                <div class="clash-card__unit-description">
+                   <h5>Conexiones Ilicitas: {{value: ConexionesIlicitas }}</h5>
+                   <h5>Lamparas Encendidas: {{value: LamparaEncendida }}</h5>
+                   <h5>Lamparas Adicionales: {{value: LamparaAdicional }}</h5>
+                   <h5>Requieren  Poda: {{value: RequierePoda }}</h5>
+                </div>
+
+                <div class="clash-card__unit-stats clash-card__unit-stats--wizard clearfix">
+                  <div class="one-third">
+                    <div class="stat"><sup></sup></div>
+                    <div class="stat-value"></div>
+                  
+                  </div>
+
+                  <div class="one-third">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                  <div class="one-third no-border">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+                  
+
+                </div>
+
+              </div> <!-- end clash-card wizard-->
+            </div> <!-- end wrapper -->
+          </div>
+          <div class="col-lg-3">
+            <div class="wrapper">
+              <div class="clash-card wizard">
+                <div class="clash-card__image clash-card__image--wizard">
+                  <img style="margin-left:10px;" src="Images/item6.png" alt="wizard" />
+                </div>
+                <div class="clash-card__level clash-card__level--wizard">Consultar Registros</div>
+                <div class="clash-card__unit-name">Cable Operadores</div>
+                <div class="clash-card__unit-description">
+                  <button style="margin-top:25px;" class="btn btn-primary btn-lg">Ingresar</button>
+                  
+                <br>
+                <br>
+                </div>
+
+                <div class="clash-card__unit-stats clash-card__unit-stats--wizard clearfix">
+                  <div class="one-third">
+                    <div class="stat"><sup></sup></div>
+                    <div class="stat-value"></div>
+                  
+                  </div>
+
+                  <div class="one-third">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+
+                  <div class="one-third no-border">
+                    <div class="stat"></div>
+                    <div class="stat-value"></div>
+                  </div>
+                  
+
+                </div>
+
+              </div> <!-- end clash-card wizard-->
+            </div> <!-- end wrapper -->
+          </div>
+        </div>
+</dot:Content>
+
+
+

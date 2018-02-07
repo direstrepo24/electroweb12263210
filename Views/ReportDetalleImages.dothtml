@@ -1,0 +1,27 @@
+@viewModel electroweb.ViewModels.ViewModelElementoImages, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+  
+ <%-- Templated header and footer --%>
+<bp:Panel>
+    <HeaderTemplate>
+        <h3>Consulta de reportes</h3>
+    </HeaderTemplate>
+    <ContentTemplate>
+
+        <bp:Button  Text="Exportar con Fotos" Click="{command: ExportDetalleFotos()}" />
+        <bp:Button  Text="Exportar HTML" Click="{command: ExportDetalleHtml()}" />
+     <bp:Button  Text="Exportar Groups" Click="{command: ExportGroupingDocsPdfReport()}" />
+     <bp:Button  Text="Exportar Sumary" Click="{command: ExportCustomSummaryPerPagePdfReport()}" />
+     
+      <bp:Button  Text="Exportar Events" Click="{command: ExportEventsPdfReport()}" />
+        
+    </ContentTemplate>
+    <FooterTemplate>
+        <i>www.interedes.com.co</i>
+    </FooterTemplate>
+</bp:Panel>
+
+
+</dot:Content>

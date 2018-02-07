@@ -1,0 +1,6 @@
+@viewModel electroweb.ViewModels.ViewModelA, electroweb
+@masterPage Views/app.dotmaster
+
+<dot:Content ContentPlaceHolderID="TitleContent">
+  <dot:TextBox Text="{value: FirstName}" />
+</dot:Content>

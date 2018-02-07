@@ -1,0 +1,14 @@
+/Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.csproj.CoreCompileInputs.cache
+/Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.AssemblyInfoInputs.cache
+/Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.AssemblyInfo.cs
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/electroweb.deps.json
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/electroweb.runtimeconfig.json
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/electroweb.runtimeconfig.dev.json
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/electroweb.dll
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/electroweb.pdb
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/datamakerslib.dll
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/Electro.model.dll
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/datamakerslib.pdb
+/Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/Electro.model.pdb
+/Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.dll
+/Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.pdb
