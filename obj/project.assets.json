@@ -12667,7 +12667,7 @@
       ]
     },
     "Microsoft.Data.Edm/5.8.2": {
-      "sha512": "qLGeOc4qGvdwfB6MkTAoHkjo54p8sRCWyjHORHEEJy33UEORq7M8Irk5EFMsXSTyYuwY2H4UO/hWs/av4F5Kug==",
+      "sha512": "P/d8DxA6MFHroBEn/jW0LMQSIKnsRRibrZtRCLfov2boQfrQ1R1BVgkJ5oIhcQsOm0l4POv+I2ny6RBsclNbOw==",
       "type": "package",
       "path": "microsoft.data.edm/5.8.2",
       "files": [
@@ -12731,7 +12731,7 @@
       ]
     },
     "Microsoft.Data.OData/5.8.2": {
-      "sha512": "60dTDbvKb+FrAo2+iKZosmyqFXVwIDrlNPjRtlQfA0ZHW9iKJ755uIqU5CbnH1viaynkULHdJP2ZpLtqO8Kh1w==",
+      "sha512": "oEIUtXcRiKogF0yZxA+QdgxoBJ34989qL/5xOSrTfxAhzNJV5Hw6DRdWgUCpeXFMoJUQx7ptbHCN+My/LCQfsg==",
       "type": "package",
       "path": "microsoft.data.odata/5.8.2",
       "files": [
@@ -14358,7 +14358,7 @@
       ]
     },
     "Newtonsoft.Json/10.0.3": {
-      "sha512": "wBM7i7i3U2WX0ecor4zdVGvgrwFUjuigBoHKiL+nH39fCOpCPjBY3RDqJM32edvdyTAVdjzlccHsg41+/+zpSA==",
+      "sha512": "hSXaFmh7hNCuEoC4XNY5DrRkLDzYHqPx/Ik23R4J86Z7PE/Y6YidhG602dFVdLBRSdG6xp9NabH3dXpcoxWvww==",
       "type": "package",
       "path": "newtonsoft.json/10.0.3",
       "files": [
@@ -14385,7 +14385,7 @@
       ]
     },
     "Newtonsoft.Json.Bson/1.0.1": {
-      "sha512": "qC6X35hvFQTCkyyvp0oHffYAxYx5DdiAVhwIElXah2iafrAL89Bu7qx6bLN3qwvJW4KtrPGCaQpyTHHYmtZAPg==",
+      "sha512": "5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
       "type": "package",
       "path": "newtonsoft.json.bson/1.0.1",
       "files": [
@@ -15378,15 +15378,15 @@
       ]
     },
     "runtime.native.System.Net.Security/4.3.0": {
-      "sha512": "Jno0Wmh5X/Hq5Dw7xapRMXVdBLc9KoBV5loV3gAE3Wl++/gVrIjbzC674qW6FmPQQgBgIF55yWYwVJSRsK9JkQ==",
+      "sha512": "M2nN92ePS8BgQ2oi6Jj3PlTUzadYSIWLdZrHY1n1ZcW9o4wAQQ6W+aQ2lfq1ysZQfVCgDwY58alUdowrzezztg==",
       "type": "package",
       "path": "runtime.native.system.net.security/4.3.0",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "runtime.native.System.Net.Security.4.3.0.nupkg.sha512",
-        "runtime.native.System.Net.Security.nuspec"
+        "runtime.native.system.net.security.4.3.0.nupkg.sha512",
+        "runtime.native.system.net.security.nuspec"
       ]
     },
     "runtime.native.System.Security.Cryptography.Apple/4.3.0": {
@@ -16700,7 +16700,7 @@
       ]
     },
     "System.Diagnostics.FileVersionInfo/4.3.0": {
-      "sha512": "rPKuxYsGDvYRSy5IuUDQwCRAJPwiUkPIhHec5gLnVwZZNSojkDnMLFfrM5zD+N6rHsTOPGf2cVYuTiWAu4XLCg==",
+      "sha512": "omCF64wzQ3Q2CeIqkD6lmmxeMZtGHUmzgFMPjfVaOsyqpR66p/JaZzManMw1s33osoAb5gqpncsjie67+yUPHQ==",
       "type": "package",
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "files": [
@@ -17271,7 +17271,7 @@
       ]
     },
     "System.Interactive.Async/3.1.1": {
-      "sha512": "hD0o7JP1NN+tYDaUymR95q/AFnjuep1Yyhai0A3yIOXgIciBi1OWhXu+uZuXjypwFTVZCtkJfaecKmmbP+wG+w==",
+      "sha512": "hZccYiIE5RS1/J9Tb/BNtosAGVggdlsJm4Ojdu+gDV0p4AIi+LUfUogMKkRacljQEJd2AG6vYzvcjhQFkqoZmw==",
       "type": "package",
       "path": "system.interactive.async/3.1.1",
       "files": [
@@ -17798,12 +17798,10 @@
       ]
     },
     "System.Net.NameResolution/4.3.0": {
-      "sha512": "Xrcotz4K5J6MdJUConyhqkjhjzlXRa5Ru8S4n+JMRrVRjONmk4ytdeW89zwuXjmmeCKnKOAvukCA5Gfb7RhGQg==",
+      "sha512": "AFYl08R7MrsrEjqpQWTZWBadqXyTzNDaWpMqyxhb0d6sGhV6xMDKueuBXlLL30gz+DIRY6MpdgnHWlCh5wmq9w==",
       "type": "package",
       "path": "system.net.nameresolution/4.3.0",
       "files": [
-        "System.Net.NameResolution.4.3.0.nupkg.sha512",
-        "System.Net.NameResolution.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -17834,7 +17832,9 @@
         "runtimes/unix/lib/netstandard1.3/System.Net.NameResolution.dll",
         "runtimes/win/lib/net46/System.Net.NameResolution.dll",
         "runtimes/win/lib/netcore50/System.Net.NameResolution.dll",
-        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll"
+        "runtimes/win/lib/netstandard1.3/System.Net.NameResolution.dll",
+        "system.net.nameresolution.4.3.0.nupkg.sha512",
+        "system.net.nameresolution.nuspec"
       ]
     },
     "System.Net.Primitives/4.3.0": {
@@ -17915,12 +17915,10 @@
       ]
     },
     "System.Net.Requests/4.3.0": {
-      "sha512": "XdIisxCecqDDE6XrxQpCYFYVrHF06HtVFYgXkZVS83ypp1mLwOmi00gctllLbu5SWj9ovluOtiKK2phieOANPw==",
+      "sha512": "OZNUuAs0kDXUzm7U5NZ1ojVta5YFZmgT2yxBqsQ7Eseq5Ahz88LInGRuNLJ/NP2F8W1q7tse1pKDthj3reF5QA==",
       "type": "package",
       "path": "system.net.requests/4.3.0",
       "files": [
-        "System.Net.Requests.4.3.0.nupkg.sha512",
-        "System.Net.Requests.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -17992,16 +17990,16 @@
         "ref/xamarinwatchos10/_._",
         "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll",
         "runtimes/win/lib/net46/_._",
-        "runtimes/win/lib/netstandard1.3/System.Net.Requests.dll"
+        "runtimes/win/lib/netstandard1.3/System.Net.Requests.dll",
+        "system.net.requests.4.3.0.nupkg.sha512",
+        "system.net.requests.nuspec"
       ]
     },
     "System.Net.Security/4.3.0": {
-      "sha512": "PjYrz+1+M7f7WoC6EQOyT5D75e9a7GLmGOmx3RDciCxGT8q2552wo9mHw+/xIPNqjO/FjzlTOsZaULZO/ANAmA==",
+      "sha512": "IgJKNfALqw7JRWp5LMQ5SWHNKvXVz094U6wNE3c1i8bOkMQvgBL+MMQuNt3xl9Qg9iWpj3lFxPZEY6XHmROjMQ==",
       "type": "package",
       "path": "system.net.security/4.3.0",
       "files": [
-        "System.Net.Security.4.3.0.nupkg.sha512",
-        "System.Net.Security.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -18032,7 +18030,9 @@
         "runtimes/unix/lib/netstandard1.6/System.Net.Security.dll",
         "runtimes/win/lib/net46/System.Net.Security.dll",
         "runtimes/win/lib/netstandard1.3/System.Net.Security.dll",
-        "runtimes/win7/lib/netcore50/_._"
+        "runtimes/win7/lib/netcore50/_._",
+        "system.net.security.4.3.0.nupkg.sha512",
+        "system.net.security.nuspec"
       ]
     },
     "System.Net.Sockets/4.3.0": {
@@ -18072,12 +18072,10 @@
       ]
     },
     "System.Net.WebHeaderCollection/4.3.0": {
-      "sha512": "MjsE9jJb+edf/VuMReGpDsy3pkY12XsBsKkHxR8VXuqrxS2envJFGRri0BfqW5wm9ZpchcUIpSlVa9B5VPgSYA==",
+      "sha512": "XZrXYG3c7QV/GpWeoaRC02rM6LH2JJetfVYskf35wdC/w2fFDFMphec4gmVH2dkll6abtW14u9Rt96pxd9YH2A==",
       "type": "package",
       "path": "system.net.webheadercollection/4.3.0",
       "files": [
-        "System.Net.WebHeaderCollection.4.3.0.nupkg.sha512",
-        "System.Net.WebHeaderCollection.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -18105,7 +18103,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.net.webheadercollection.4.3.0.nupkg.sha512",
+        "system.net.webheadercollection.nuspec"
       ]
     },
     "System.Numerics.Vectors/4.4.0": {
@@ -19785,7 +19785,7 @@
       ]
     },
     "System.Spatial/5.8.2": {
-      "sha512": "jIYeFb5n7ENB176C5cCVLU9xxr6X7/QOwdMlgpBDRA4JVKNmshiy7qX+TEqXk1f88VacKRDWhG8MJOBnEiHyVg==",
+      "sha512": "0RfZZJ8RlrfjoBPAF6pczX4Nd2kyLM8EX1PCP5Rqs/jOhJBUPYhpXjIsVAYN7kocj9IJ9XoJWAxWgXIDtJY2Ag==",
       "type": "package",
       "path": "system.spatial/5.8.2",
       "files": [
@@ -20282,12 +20282,10 @@
       ]
     },
     "System.Threading.Tasks.Parallel/4.3.0": {
-      "sha512": "sXRlZsC6s2x+m6AJNPiwdNigQ5JIGq6g0fQIYxaFwt5eHwuspgxq23pHP9YrdMDBIf1LxnzLawHiUNnlGQwF0g==",
+      "sha512": "cbjBNZHf/vQCfcdhzx7knsiygoCKgxL8mZOeocXZn5gWhCdzHIq6bYNKWX0LAJCWYP7bds4yBK8p06YkP0oa0g==",
       "type": "package",
       "path": "system.threading.tasks.parallel/4.3.0",
       "files": [
-        "System.Threading.Tasks.Parallel.4.3.0.nupkg.sha512",
-        "System.Threading.Tasks.Parallel.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -20333,7 +20331,9 @@
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._"
+        "ref/xamarinwatchos10/_._",
+        "system.threading.tasks.parallel.4.3.0.nupkg.sha512",
+        "system.threading.tasks.parallel.nuspec"
       ]
     },
     "System.Threading.Thread/4.3.0": {
@@ -20684,7 +20684,7 @@
       ]
     },
     "System.Xml.XmlSerializer/4.3.0": {
-      "sha512": "2YDJgLC2IS5rD1NbUecQgLTVHLVZ0YxceQd4FjlqGLRLCcHKyJ5hpgdeJUerMM1znJkM1MOYqpM3SPnSqgZ9QQ==",
+      "sha512": "MYoTCP7EZ98RrANESW05J5ZwskKDoN0AuZ06ZflnowE50LTpbR5yRg3tHckTVm5j/m47stuGgCrCHWePyHS70Q==",
       "type": "package",
       "path": "system.xml.xmlserializer/4.3.0",
       "files": [
@@ -20753,7 +20753,7 @@
       ]
     },
     "System.Xml.XPath/4.3.0": {
-      "sha512": "DKiGuAIqwSfzIYCojUTabkwWjORee9rebEbV9bXhYi+zK+DbaCkYSMHuJ8KQ3Ffmx08OkyCGsafT+KT/jlBn0w==",
+      "sha512": "v1JQ5SETnQusqmS3RwStF7vwQ3L02imIzl++sewmt23VGygix04pEH+FCj1yWb+z4GDzKiljr1W7Wfvrx0YwgA==",
       "type": "package",
       "path": "system.xml.xpath/4.3.0",
       "files": [
@@ -20790,7 +20790,7 @@
       ]
     },
     "System.Xml.XPath.XDocument/4.3.0": {
-      "sha512": "cCT2suxB3sK9Uq8vU3qkajzhtGJJywPO15dQmQDz+ZT+GL3FQNtSwN+ru4reDNiPyo7NGtMH95FEPXpTO+UScA==",
+      "sha512": "jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "type": "package",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "files": [
@@ -20949,30 +20949,34 @@
     ]
   },
   "packageFolders": {
-    "/Users/torrefuertesas/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\usuario\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/torrefuertesas/dev/electro/electroweb/electroweb.csproj",
+      "projectUniqueName": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
       "projectName": "electroweb",
-      "projectPath": "/Users/torrefuertesas/dev/electro/electroweb/electroweb.csproj",
-      "packagesPath": "/Users/torrefuertesas/.nuget/packages/",
-      "outputPath": "/Users/torrefuertesas/dev/electro/electroweb/obj/",
+      "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
+      "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+      "outputPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/torrefuertesas/dev/electro/electroweb/NuGet.Config",
-        "/Users/torrefuertesas/.nuget/NuGet/NuGet.Config"
+        "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\NuGet.Config",
+        "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "/Users/torrefuertesas/.dotnet/NuGetFallbackFolder": {},
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
         "https://www.dotvvm.com/nuget/v3/index.json": {},
         "https://www.myget.org/F/aspnet-contrib/api/v3/index.json": {}
@@ -20980,11 +20984,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/torrefuertesas/dev/electro/datamakerslib/datamakerslib.csproj": {
-              "projectPath": "/Users/torrefuertesas/dev/electro/datamakerslib/datamakerslib.csproj"
+            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj": {
+              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj"
             },
-            "/Users/torrefuertesas/dev/electro/Electro.model/Electro.model.csproj": {
-              "projectPath": "/Users/torrefuertesas/dev/electro/Electro.model/Electro.model.csproj"
+            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj": {
+              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj"
             }
           }
         }
@@ -20998,67 +21002,67 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
+          "AutoMapper": {
             "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
+            "version": "[6.1.1, )"
           },
-          "DotVVM.BusinessPack.Export.Csv": {
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
             "target": "Package",
-            "version": "1.1.5-rc1"
+            "version": "[3.0.1, )"
           },
-          "Microsoft.AspNetCore.All": {
+          "CoreCompat.System.Drawing.v2": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[5.2.0-preview1-r131, )"
           },
-          "Microsoft.AspNetCore.StaticFiles": {
+          "DotNetCore.NPOI": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[1.0.2, )"
           },
           "DotVVM.AspNetCore": {
             "target": "Package",
-            "version": "1.1.7"
+            "version": "[1.1.7, )"
           },
           "DotVVM.BusinessPack": {
             "target": "Package",
-            "version": "1.1.5-rc1"
+            "version": "[1.1.5-rc1, )"
+          },
+          "DotVVM.BusinessPack.Export.Csv": {
+            "target": "Package",
+            "version": "[1.1.5-rc1, )"
+          },
+          "EPPlus.Core": {
+            "target": "Package",
+            "version": "[1.5.4, )"
+          },
+          "Microsoft.AspNetCore.All": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.AspNetCore.NodeServices": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
+          "Microsoft.AspNetCore.StaticFiles": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "Npgsql.EntityFrameworkCore.PostgreSQL": {
             "target": "Package",
-            "version": "2.0.0"
-          },
-          "AutoMapper": {
-            "target": "Package",
-            "version": "6.1.1"
-          },
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-            "target": "Package",
-            "version": "3.0.1"
-          },
-          "Microsoft.AspNetCore.NodeServices": {
-            "target": "Package",
-            "version": "2.0.1"
-          },
-          "EPPlus.Core": {
-            "target": "Package",
-            "version": "1.5.4"
+            "version": "[2.0.0, )"
           },
           "PdfRpt.Core": {
             "target": "Package",
-            "version": "1.1.4"
-          },
-          "DotNetCore.NPOI": {
-            "target": "Package",
-            "version": "1.0.2"
-          },
-          "CoreCompat.System.Drawing.v2": {
-            "target": "Package",
-            "version": "5.2.0-preview1-r131"
+            "version": "[1.1.4, )"
           }
         },
         "imports": [
