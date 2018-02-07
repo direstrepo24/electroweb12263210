@@ -12,3 +12,17 @@
 /Users/torrefuertesas/dev/electro/electroweb/bin/Debug/netcoreapp2.0/Electro.model.pdb
 /Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.dll
 /Users/torrefuertesas/dev/electro/electroweb/obj/Debug/netcoreapp2.0/electroweb.pdb
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.csproj.CoreCompileInputs.cache
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.AssemblyInfoInputs.cache
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.AssemblyInfo.cs
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.dll
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.pdb
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.deps.json
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.runtimeconfig.json
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.runtimeconfig.dev.json
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.dll
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.pdb
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\datamakerslib.dll
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\Electro.model.dll
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\datamakerslib.pdb
+e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\Electro.model.pdb
