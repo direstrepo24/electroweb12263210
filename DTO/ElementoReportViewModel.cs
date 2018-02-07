@@ -102,6 +102,7 @@ namespace electroweb.DTO
 
         public DateTime? Fecha_Sincronizacion {get; set;}
         public string Hora_Sincronizacion {get; set;}
+        public bool Is_Enabled_Data {get; set;}
         public string HoraFin { get; set; }
 
         public string ResistenciaMecanica { get; set; }
