@@ -113,14 +113,14 @@ namespace electroweb.ViewModels
 
         private async Task<IQueryable<Elemento>> elementosList(){
             IEnumerable<Elemento> elementos=Enumerable.Empty<Elemento>();
-            elementos=await _elementoRepository.AllIncludingAsyncWhere(a=>a.Ciudad_Id!=658,b=>b.Ciudad);
+            elementos=await _elementoRepository.AllIncludingAsyncWhere(a=>a.Ciudad_Id!=658 && a.Ciudad.departmentoId==17 && a.Is_Enabled_Data==true,b=>b.Ciudad);
             return  elementos.AsQueryable();
 
         }
 
          private async Task<IQueryable<Perdida>> perdidasList(){
             IEnumerable<Perdida> elementos=Enumerable.Empty<Perdida>();
-            elementos=await _perdidaRepository.AllIncludingAsyncWhere(a=>a.Response_Checked==true);
+            elementos=await _perdidaRepository.AllIncludingAsyncWhere(a=>a.Response_Checked==true && a.Elemento.Ciudad_Id!=658 && a.Elemento.Ciudad.departmentoId==17  && a.Elemento.Is_Enabled_Data==true,b=>b.Elemento.Ciudad, c=>c.Elemento);
             return  elementos.AsQueryable();
         }
     }
