@@ -46,7 +46,7 @@
               </dot:RouteLink>
             </li>
             <li>
-              <dot:RouteLink RouteName="ReportUsuario" class="{value: 'nav-link ' + (ActivePage == 'ReportUsuario' ? 'header-item-active' : '')}">
+              <dot:RouteLink RouteName="ReportUsuario"  class="{value: 'nav-link ' + (ActivePage == 'ReportUsuario' ? 'header-item-active' : '')}">
                 <span class="glyphicon glyphicon-user"></span> Usuarios
               </dot:RouteLink>
             </li>
@@ -56,6 +56,15 @@
                 <span class="glyphicon glyphicon-user"></span> Novedades
               </dot:RouteLink>
             </li>
+
+             <li>
+                 <dot:LinkButton Click="{command: SignOut()}" Text="Salir" class="nav-link header-item" Validation.Enabled="false" />
+            </li>
+
+            
+
+
+          
 
            <!-- <li>
               <dot:RouteLink RouteName="Administrador" class="{value: 'nav-link ' + (ActivePage == 'Administrador' ? 'header-item-active' : '')}">
@@ -71,6 +80,8 @@
             </li>-->
             
           </ul>
+
+          
         </div>
       </nav>
     </div>

@@ -63,36 +63,28 @@
                 </tr>
 
                 <tr>
-                    <th>
+                    <th colspan='3' align='center'>
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="card card-body">
 
-                                 <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col"><small style="font-size:20px !important; font-weight: bold;">Tipo Logitud</small></th>
-                                        <th scope="col"><small style="font-size:20px !important; font-weight: bold;">Total</small></th>
-                                    </tr>
-                                </thead>
-                                 </table>
-                            
-                            <table  class="table table-hover">
-                                <tbody>
-                                    <tr style="margin:0 !important;      padding: 0.0rem;" class="table-primary">
-                                    <th style="margin:0 !important;      padding: 0.0rem;" scope="row"><small style="font-size:14px !important; font-weight: bold;">6</small></th>
-                                    <td style="margin:0 !important;      padding: 0.0rem;"><small style="font-size:14px !important; "></small></td>
-                                    </tr>
-                                </tbody>
-                            </table> 
+                                <bp:GridView class="table"    DataSource="{value: PostesLongitud}">
+                                <Columns>
+                                 
+                                    <bp:GridViewTemplateColumn 
+                                    HeaderText="LONGITUD"  AllowSorting="true" >
+                                        <ContentTemplate>
+                                            <span class="btn btn-link btn-lg btn-block" style="font-weight: bold; color: #E95420; background-color: transparent;">{{value: Longitud_Elemento}}</span>
+                                        </ContentTemplate>
+                                    </bp:GridViewTemplateColumn>
+                                    <bp:GridViewTemplateColumn 
+                                    HeaderText="CANTIDAD"  AllowSorting="true"  >
+                                        <ContentTemplate>
+                                            <span class="btn btn-link btn-lg btn-block" style="font-weight: 400; color: #E95420; background-color: transparent;" >{{value: Total_Postes}}</span>
+                                        </ContentTemplate>
+                                    </bp:GridViewTemplateColumn>
+                                </Columns>
+                            </bp:GridView>
 
-                             <table class="table table-hover">
-                                <tbody>
-                                    <tr class="table-primary">
-                                    <th scope="row"><small style="font-size:14px !important; font-weight: bold;">8</small></th>
-                                    <td><small style="font-size:14px !important; "></small></td>
-                                    </tr>
-                                </tbody>
-                            </table> 
                             </div>
                         </div>
                     </th>
@@ -101,10 +93,41 @@
                 
                 <tr >
                 <th><h5> <strong>Total Ocupaciones  {{value: SelectedCiudad.Nombre}}, {{value: SelectedDeparment.Nombre}}: </strong> </h5></th>
-                <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: TotalInventarioOcupacines}}</strong></button></th>
+                <th><button type="button" data-toggle="collapse" href="#multiCollapseExample2" role="button" aria-expanded="false" aria-controls="multiCollapseExample1" class="btn btn-lg btn-outline-warning"><strong> {{value: TotalInventarioOcupacines}}</strong></button></th>
                 <th><h4>100%</h4></th>
                  <th></th>
                 </tr>
+
+                <tr>
+                    <th colspan='3' align='center'>
+                        <div class="collapse multi-collapse" id="multiCollapseExample2">
+                            <div class="card card-body">
+
+                                <bp:GridView class="table"    DataSource="{value: OcupacionesLongitudGrid}">
+                                <Columns>
+                                 
+                                    <bp:GridViewTemplateColumn 
+                                    HeaderText="LONGITUD"  AllowSorting="true" >
+                                        <ContentTemplate>
+                                            <span class="btn btn-link btn-lg btn-block" style="font-weight: bold; color: #E95420; background-color: transparent;">{{value: Longitud_Elemento}}</span>
+                                        </ContentTemplate>
+                                    </bp:GridViewTemplateColumn>
+                                    <bp:GridViewTemplateColumn 
+                                    HeaderText="OCUPACIONES"  AllowSorting="true"  >
+                                        <ContentTemplate>
+                                            <span class="btn btn-link btn-lg btn-block" style="font-weight: 400; color: #E95420; background-color: transparent;" >{{value: Total_Ocupaciones}}</span>
+                                        </ContentTemplate>
+                                    </bp:GridViewTemplateColumn>
+                                </Columns>
+                            </bp:GridView>
+
+                            </div>
+                        </div>
+                    </th>
+                     
+                </tr>
+
+
                  <tr >
                 <th><h5> <strong>Recaudo Total Anual Estimado : </strong> </h5></th>
                 <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: ValorAnualRecaudoTotal}}</strong></button></th>
@@ -116,11 +139,6 @@
             </tbody>
         </table> 
 
-        <p>
- 
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Toggle second element</button>
-  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Toggle both elements</button>
-</p>
 <div class="row">
   <div class="col">
     <div class="collapse multi-collapse" id="multiCollapseExample1">
@@ -162,7 +180,7 @@
             <Columns>
               
 
-                 <bp:GridViewTemplateColumn     HeaderText="Operador">
+                 <bp:GridViewTemplateColumn     HeaderText="Operador"  AllowSorting="true">
                     <ContentTemplate>
                                 <dot:Button class="btn btn-outline-primary btn-lg btn-block" Text="{{value: Operador}}" Click="{command: _parent.ViewModalDisplay(_this)}"/>
                     

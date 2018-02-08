@@ -54,10 +54,10 @@ namespace electroweb
         {
 
 
-             config.RouteTable.Add("Login", "Login", "Views/Login_User/Login.dothtml");
+             config.RouteTable.Add("Login", "", "Views/Login_User/Login.dothtml");
 
 
-             config.RouteTable.Add("Default", "", "Views/Default.dothtml");
+             config.RouteTable.Add("Default", "Default", "Views/Default.dothtml");
           
 
             

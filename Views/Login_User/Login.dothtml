@@ -1,5 +1,5 @@
 ﻿@viewModel electroweb.ViewModels.LoginViewModel, electroweb
-
+<!--
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -22,25 +22,19 @@
             </div>
 
             <div class="form-group">
-                <label class="col-md-4 control-label">E-mail</label>
-                <div class="col-md-8" Validator.Value="{value: Email}">
-                    <dot:TextBox class="form-control" Text="{value: Email}" name="username" />
+                <label class="col-md-4 control-label">Nombre Usuario</label>
+                <div class="col-md-8" >
+                    <dot:TextBox class="form-control" Text="{value: UserName}" name="username" />
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="col-md-4 control-label">Password</label>
-                <div class="col-md-8" Validator.Value="{value: Password}">
+                <div class="col-md-8" >
                     <dot:TextBox class="form-control" Text="{value: Password}" name="password" Type="Password" />
                 </div>
             </div>
-<!--
-            <div class="form-group">
-                <label class="col-md-8 col-md-offset-4">
-                    <dot:CheckBox class="checkbox-inline" Checked="{value: RememberMe}" />
-                    Remember Me
-                </label>
-            </div>-->
+
 
             <div class="form-group">
                 <div class="validation-box">
@@ -57,19 +51,130 @@
                         </dot:UpdateProgress>
                     </div>
 
-                    <dot:Button Click="{command: SignIn()}" class="btn btn-warning" name="submit" 
+                    <dot:Button Click="{command: Login()}" class="btn btn-warning" name="submit" 
                                 IsSubmitButton="true" ButtonTagName="button">Ingresar</dot:Button>
                 </div>
             </div>
 
             <hr />
-<!--
-            <div class="form-group" Visible="{value: AADEnabled}">
-                <label class="col-md-8 col-md-offset-4">
-                    <dot:LinkButton Click="{command: SignInAAD()}" Validation.Enabled="false">Sign in with Work or school account</dot:LinkButton>
-                </label>
-            </div>-->
+
         </form>
     </div>
+</body>
+</html>
+-->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Login V4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="login/images/icons/logo_datatakeh.png"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="login/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="login/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="login/css/util.css">
+	<link rel="stylesheet" type="text/css" href="login/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('../Images/backgound-firts.jpg');">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-49">
+                         <img src="Images/interedes_logo.png" width="60%"/><br>
+
+                         <img src="Images/logo.png" width="40%"/>
+						
+					</span>
+
+					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
+						<span class="label-input100">Nombre Usuario</span>
+						 <dot:TextBox autocomplete="on" class="input100" Text="{value: UserName}" name="username" />
+						<span class="focus-input100" data-symbol="&#xf206;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<span class="label-input100">Password</span>
+                        
+                         <dot:TextBox autocomplete="on" class="input100" Text="{value: Password}" name="password"  Type="Password" />
+						<span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="validation-box">
+                            {{value: ErrorMessage}}
+                            <dot:ValidationSummary />
+                        </div>
+                    </div>
+
+                       <div style="display: inline-block">
+                                <dot:UpdateProgress>
+                                    <img src="~/Style/default.svg">
+                                </dot:UpdateProgress>
+                            </div>
+                   
+					
+				
+					<div class="container-login100-form-btn">
+						<div class="wrap-login100-form-btn">
+							<div class="login100-form-bgbtn"></div>
+                            <dot:Button Click="{command: Login()}" class="login100-form-btn" name="submit" 
+                                IsSubmitButton="true" ButtonTagName="button">Ingresar</dot:Button>
+						</div>
+					</div>
+
+
+					
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="login/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/bootstrap/js/popper.js"></script>
+	<script src="login/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/daterangepicker/moment.min.js"></script>
+	<script src="login/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="login/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="login/js/main.js"></script>
+
 </body>
 </html>

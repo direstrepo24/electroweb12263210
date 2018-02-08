@@ -10,9 +10,11 @@ using Electro.model.Repository;
 using Electro.model.datatakemodel;
 using System.Globalization;
 using System.Web;
+using DotVVM.Framework.Runtime.Filters;
 
 namespace electroweb.ViewModels
 {
+    [Authorize]
     public class DefaultViewModel : BaseViewModel
     {
         private readonly IEstadoRepository _IestadoRepository;

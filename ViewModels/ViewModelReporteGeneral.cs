@@ -291,7 +291,25 @@ namespace electroweb.ViewModels
             
             TotalInventarioElemento=allApoyos.Count;
             TotalInventarioOcupacines =allCables.AsEnumerable().Sum(a=>a.Cantidad_Cable);
-     
+
+
+            CantidadLongitudPostes= new List<CantidadLongitudPostesViewModel>();
+             foreach(var itemlongitud in longitudElementos){
+                 CantidadLongitudPostes.Add(new CantidadLongitudPostesViewModel{
+                     Longitud_Elemento= itemlongitud.Valor,
+                     Total_Postes= allApoyos.Where(a=>a.FirstOrDefault().Longitud_Elemento_Id==itemlongitud.Id).Count()
+
+                 });
+             }
+
+            OcupacionesLongitudList= new List<ValorLongitudViewModel>();
+            foreach(var item in longitudElementos){
+                     var cantidadOcupacionesLongitud= allCables.Where(a=>a.Longitud_Elemento_Id==item.Id).AsEnumerable().Sum(a=>a.Cantidad_Cable);
+                      OcupacionesLongitudList.Add(new ValorLongitudViewModel{
+                     Longitud_Elemento= item.Valor,
+                     Total_Ocupaciones=cantidadOcupacionesLongitud
+                 });
+              }
 
 
             var groupEmpresas= allCables.GroupBy(a=>a.Empresa_Id).ToList();
@@ -412,7 +430,8 @@ namespace electroweb.ViewModels
                  numbers.Add(new ReportGeneralViewModel { Operador = i + "Claro", Apoyos = i + 1, Ocupaciones = i ,Porcentaje=20});
             }*/
               //  numbers.Add(new ReportGeneralViewModel { Operador = i + "Claro", Apoyos = $"ReportGeneralViewModel {i + 1}", Ocupaciones = i });
-            
+            await InitLoadPostesLongitud();
+            await InitLoadOcupacionesLongitud();
             return listEmpresasReport.AsQueryable();
         }
 
@@ -423,10 +442,16 @@ namespace electroweb.ViewModels
             SelectedReportGeneralViewModel=reportGeneralViewModel;
              IsModalDisplayed=true;
              await InitLoadByLongitud();
+           
 
         }
 
 
+
+
+        ///Ocupaciones por longitud
+
+        
         public BpGridViewDataSet<ValorLongitudViewModel> ListReportLongitud { get; set; }
 
         public async Task InitLoadByLongitud()
@@ -449,7 +474,61 @@ namespace electroweb.ViewModels
         {
              return SelectedReportGeneralViewModel.ValorLongitudes.AsQueryable();
         }
+
+
+
+        //POSTES LONGITUD
+        public List<CantidadLongitudPostesViewModel> CantidadLongitudPostes {get; set;}
+        public BpGridViewDataSet<CantidadLongitudPostesViewModel> PostesLongitud { get; set; }
+
+        public  async Task InitLoadPostesLongitud()
+        {
+            PostesLongitud = new BpGridViewDataSet<CantidadLongitudPostesViewModel> {
+                OnLoadingData = GetDataLongitud
+            };
+            PostesLongitud.SetSortExpression(nameof(CantidadLongitudPostesViewModel.Longitud_Elemento));
+
+           
+        }
+
+        public GridViewDataSetLoadedData<CantidadLongitudPostesViewModel> GetDataLongitud(IGridViewDataSetLoadOptions gridViewDataSetOptions)
+        {
+            var queryable = GetQueryablePostesLongitud();
+            return queryable.GetDataFromQueryable(gridViewDataSetOptions);
+        }
+
+        private IQueryable<CantidadLongitudPostesViewModel> GetQueryablePostesLongitud()
+        {
+           return CantidadLongitudPostes.AsQueryable();
+        }
+
+        //Oupaciones Longitud Poste
+        public List<ValorLongitudViewModel> OcupacionesLongitudList {get; set;}
+        public BpGridViewDataSet<ValorLongitudViewModel> OcupacionesLongitudGrid { get; set; }
+        public  async Task InitLoadOcupacionesLongitud()
+        {
+            OcupacionesLongitudGrid = new BpGridViewDataSet<ValorLongitudViewModel> {
+                OnLoadingData = GetDataOcupacionesLongitud
+            };
+            OcupacionesLongitudGrid.SetSortExpression(nameof(ValorLongitudViewModel.Longitud_Elemento));
+        }
+
+        public GridViewDataSetLoadedData<ValorLongitudViewModel> GetDataOcupacionesLongitud(IGridViewDataSetLoadOptions gridViewDataSetOptions)
+        {
+            var queryable = GetQueryableOcupacionesLongitudGeneral();
+            return queryable.GetDataFromQueryable(gridViewDataSetOptions);
+        }
+
+        private IQueryable<ValorLongitudViewModel> GetQueryableOcupacionesLongitudGeneral()
+        {
+           return OcupacionesLongitudList.AsQueryable();
+        }
+
     }
+
+
+
+
 
 
     public class ReportGeneralViewModel{
@@ -466,19 +545,23 @@ namespace electroweb.ViewModels
 
 
         public List<ValorLongitudViewModel> ValorLongitudes {get; set;}
+     
 
     }
 
 
      public class ValorLongitudViewModel{
         public string ValorAnualNorma {get; set;}
-        public long Longitud_Elemento {get; set;}
+        public double Longitud_Elemento {get; set;}
         public long Total_Ocupaciones {get; set;}
         public string Recaudo_Longitud {get; set; }
-
-
-
     }
 
-   
+
+     public class CantidadLongitudPostesViewModel{
+        public double Longitud_Elemento {get; set;}
+        public long Total_Postes {get; set;}
+      
+    }
+
 }

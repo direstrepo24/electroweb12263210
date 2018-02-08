@@ -7,10 +7,11 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using AutoMapper;
 using datamakerslib.Startup;
-
+using DotVVM.Framework.Hosting;
 using Electro.model.DataContext;
 using Electro.model.Repository;
 using electroweb.Reports;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -57,6 +58,26 @@ namespace electroweb
                     b => b.MigrationsAssembly("Electroweb")
                 );
             });
+
+
+            //AUTH
+              services.AddAuthentication(sharedOptions =>
+                {
+                    sharedOptions.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                })
+                .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options => {
+                    options.Events = new CookieAuthenticationEvents
+                    {
+                        OnRedirectToReturnUrl = c => DotvvmAuthenticationHelper.ApplyRedirectResponse(c.HttpContext, c.RedirectUri),
+                        OnRedirectToAccessDenied = c => DotvvmAuthenticationHelper.ApplyStatusCodeResponse(c.HttpContext, 403),
+                        OnRedirectToLogin = c => DotvvmAuthenticationHelper.ApplyRedirectResponse(c.HttpContext, c.RedirectUri),
+                        OnRedirectToLogout = c => DotvvmAuthenticationHelper.ApplyRedirectResponse(c.HttpContext, c.RedirectUri)
+                    };
+                    options.LoginPath = new PathString("/login");
+                });
+
+
+            
              // Add converter to DI
            // services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));   
             //llamar a los repositorios
@@ -123,6 +144,9 @@ namespace electroweb
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+
+            app.UseAuthentication();
+
            
             loggerFactory.AddConsole();
 
@@ -155,6 +179,8 @@ namespace electroweb
             Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/fonts")),  
                 RequestPath = new PathString("/wwwroot/fonts") // accessing outside wwwroot folder contents.  
             }); 
+
+            
 
             app.UseMvc();
         }
