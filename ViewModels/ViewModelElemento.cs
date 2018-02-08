@@ -952,6 +952,11 @@ namespace electroweb.ViewModels
                     mapEquipo.NombreEmpresaEquipo=mapEquipo.Ciudad_Empresa.Empresa.Nombre;    
                     viewModelMap.Equipos.Add(mapEquipo);
                 }
+
+                
+
+
+
                 list.Add(viewModelMap);
             }
             return  list.AsQueryable();
@@ -992,7 +997,9 @@ namespace electroweb.ViewModels
             string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
             ElementosDetallePdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-            Context.ReturnFile(outputStream, "report_detalle.pdf", "application/pdf");
+            
+            
+            Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",SelectedCiudad.Nombre), "application/pdf");
         }
 
         public void ExporGeneralPdf(){
@@ -1004,13 +1011,13 @@ namespace electroweb.ViewModels
 
 
          ElementosPdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-          Context.ReturnFile(outputStream, "reporte_general.pdf", "application/pdf");
+          Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",SelectedCiudad.Nombre), "application/pdf");
         }
         
         public void ExportExcel(){
             var outputStream = new MemoryStream();
             ElementosPdfReport.CreateInMemoryPdfReport(_hostingEnvironment.WebRootPath, ReportElementos);
-            Context.ReturnFile(outputStream, "report.xlsx", "application/ms-excel");
+            Context.ReturnFile(outputStream,  string.Format("report_{0}.xlsx",SelectedCiudad.Nombre), "application/ms-excel");
         }
 
         private async Task<IQueryable<ElementoViewModel>> GetQueryable(int size)

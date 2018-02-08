@@ -754,7 +754,7 @@ namespace electroweb.ViewModels
                 var listFotosPoste= _fotoRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==item.Id);
                 listFotos= _mapper.Map<IEnumerable<Foto>, IEnumerable<FotoViewModel>>(listFotosPoste.Result).ToList();
                 viewModelMap.Fotos =listFotos;
-
+                //EQUIPOS
                 var equiposElementos= await _equipoElementoRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==item.Id, b=>b.TipoEquipo,c=>c.Ciudad_Empresa, d=>d.Ciudad_Empresa.Empresa);
                 viewModelMap.Equipos= new List<EquipoViewModel>();
                 foreach(var queryequipo in equiposElementos){
@@ -763,6 +763,7 @@ namespace electroweb.ViewModels
                     viewModelMap.Equipos.Add(mapEquipo);
                 }
 
+                //CABLES
                 var cablesElementos= await _elementoCableRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==item.Id,b=>b.DetalleTipoCable,c=>c.Ciudad_Empresa, d=>d.Ciudad_Empresa.Empresa,e=>e.DetalleTipoCable.Cable,f=>f.DetalleTipoCable.TipoCable);
                   viewModelMap.Cables= new List<ElementoCableViewModel>();
                 foreach(var cable in cablesElementos.ToList()){

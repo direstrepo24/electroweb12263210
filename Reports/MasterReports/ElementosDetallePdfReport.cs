@@ -201,7 +201,6 @@ namespace electroweb.Reports.MasterReports
                      rptHeader.AddGroupHeader(groupHeader =>
 					 {
 						 var data = groupHeader.NewGroupInfo;
-
 						 var ciudad = data.GetSafeStringValueOf<ElementoReportViewModel>(x => x.Ciudad);
 						 //Details Elemento
 						 var elemento_id = data.GetSafeStringValueOf<ElementoReportViewModel>(x => x.Elemento_Id);
@@ -434,7 +433,7 @@ namespace electroweb.Reports.MasterReports
 			 {
 				 var listOfRows = new List<ElementoReportViewModel>();
 				 listOfRows=reportElementos;
-				 listOfRows = listOfRows.OrderBy(x => x.Ciudad).ThenBy(x => x.Nombre_Empresa).ToList();
+				 listOfRows = listOfRows.OrderBy(x => x.Ciudad).ThenBy(x=>x.Elemento_Id).ToList();
                  /// listOfRows = listOfRows.OrderBy(x => x.Department).ThenBy(x => x.Age).ToList();
 				 dataSource.StronglyTypedList(listOfRows);
 			 })

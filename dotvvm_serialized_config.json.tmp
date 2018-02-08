@@ -98,28 +98,35 @@
   },
   "resources": {
     "scripts": {
-      "dotvvm.businesspack": {
+      "bootstrap": {
         "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
-          "Assembly": "DotVVM.BusinessPack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=77e8efd43b7ae75f",
-          "Name": "DotVVM.BusinessPack.Resources.BusinessPack.min.js",
-          "DebugFilePath": null
+          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
+          "FilePath": "Scripts/bootstrap.min.js"
         },
         "LocationFallback": null,
         "MimeType": "text/javascript",
         "VerifyResourceIntegrity": false,
         "Dependencies": [
-          "dotvvm.businesspack-css",
-          "jquery",
-          "dotvvm"
+          "jquery"
         ],
         "RenderPosition": 1
       },
-      "knockout": {
+      "settings": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
+          "FilePath": "wwwroot/scripts/settings.js"
+        },
+        "LocationFallback": null,
+        "MimeType": "text/javascript",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [],
+        "RenderPosition": 1
+      },
+      "dotvvm.jquery-sortable": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
-          "Assembly": "DotVVM.Framework, Version=1.1.7.0, Culture=neutral, PublicKeyToken=23f3607db32275da",
-          "Name": "DotVVM.Framework.Resources.Scripts.knockout-latest.js",
+          "Assembly": "DotVVM.BusinessPack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=77e8efd43b7ae75f",
+          "Name": "DotVVM.BusinessPack.Resources.Libs.jquery-sortable.min.js",
           "DebugFilePath": null
         },
         "LocationFallback": null,
@@ -143,19 +150,6 @@
         ],
         "RenderPosition": 1
       },
-      "autoHideAlert": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "Scripts/autoHideAlert.js"
-        },
-        "LocationFallback": null,
-        "MimeType": "text/javascript",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [
-          "jquery"
-        ],
-        "RenderPosition": 1
-      },
       "dotvvm.debug": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
@@ -172,11 +166,63 @@
         ],
         "RenderPosition": 1
       },
-      "dotvvm.jquery-sortable": {
+      "dotvvm.diffdom": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
           "Assembly": "DotVVM.BusinessPack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=77e8efd43b7ae75f",
-          "Name": "DotVVM.BusinessPack.Resources.Libs.jquery-sortable.min.js",
+          "Name": "DotVVM.BusinessPack.Resources.Libs.diffdom.min.js",
+          "DebugFilePath": null
+        },
+        "LocationFallback": null,
+        "MimeType": "text/javascript",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [],
+        "RenderPosition": 1
+      },
+      "preserveTextBoxFocus": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
+          "FilePath": "Scripts/preserveTextBoxFocus.js"
+        },
+        "LocationFallback": null,
+        "MimeType": "text/javascript",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [
+          "dotvvm",
+          "jquery"
+        ],
+        "RenderPosition": 1
+      },
+      "bootstrap_min": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
+          "FilePath": "wwwroot/_vendor/bootstrap/dist/js/bootstrap.min.js"
+        },
+        "LocationFallback": null,
+        "MimeType": "text/javascript",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [],
+        "RenderPosition": 1
+      },
+      "ExpressionTextBox": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
+          "FilePath": "Scripts/ExpressionTextBox.js"
+        },
+        "LocationFallback": null,
+        "MimeType": "text/javascript",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [
+          "dotvvm",
+          "jquery"
+        ],
+        "RenderPosition": 1
+      },
+      "globalize": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
+          "Assembly": "DotVVM.Framework, Version=1.1.7.0, Culture=neutral, PublicKeyToken=23f3607db32275da",
+          "Name": "DotVVM.Framework.Resources.Scripts.Globalize.globalize.js",
           "DebugFilePath": null
         },
         "LocationFallback": null,
@@ -206,37 +252,11 @@
         "Dependencies": [],
         "RenderPosition": 1
       },
-      "dotvvm.diffdom": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
-          "Assembly": "DotVVM.BusinessPack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=77e8efd43b7ae75f",
-          "Name": "DotVVM.BusinessPack.Resources.Libs.diffdom.min.js",
-          "DebugFilePath": null
-        },
-        "LocationFallback": null,
-        "MimeType": "text/javascript",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [],
-        "RenderPosition": 1
-      },
-      "bootstrap": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "Scripts/bootstrap.min.js"
-        },
-        "LocationFallback": null,
-        "MimeType": "text/javascript",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [
-          "jquery"
-        ],
-        "RenderPosition": 1
-      },
-      "globalize": {
+      "knockout": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
           "Assembly": "DotVVM.Framework, Version=1.1.7.0, Culture=neutral, PublicKeyToken=23f3607db32275da",
-          "Name": "DotVVM.Framework.Resources.Scripts.Globalize.globalize.js",
+          "Name": "DotVVM.Framework.Resources.Scripts.knockout-latest.js",
           "DebugFilePath": null
         },
         "LocationFallback": null,
@@ -245,52 +265,15 @@
         "Dependencies": [],
         "RenderPosition": 1
       },
-      "settings": {
+      "autoHideAlert": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "wwwroot/scripts/settings.js"
-        },
-        "LocationFallback": null,
-        "MimeType": "text/javascript",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [],
-        "RenderPosition": 1
-      },
-      "bootstrap_min": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "wwwroot/_vendor/bootstrap/dist/js/bootstrap.min.js"
-        },
-        "LocationFallback": null,
-        "MimeType": "text/javascript",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [],
-        "RenderPosition": 1
-      },
-      "ExpressionTextBox": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "Scripts/ExpressionTextBox.js"
+          "FilePath": "Scripts/autoHideAlert.js"
         },
         "LocationFallback": null,
         "MimeType": "text/javascript",
         "VerifyResourceIntegrity": false,
         "Dependencies": [
-          "dotvvm",
-          "jquery"
-        ],
-        "RenderPosition": 1
-      },
-      "preserveTextBoxFocus": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "Scripts/preserveTextBoxFocus.js"
-        },
-        "LocationFallback": null,
-        "MimeType": "text/javascript",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [
-          "dotvvm",
           "jquery"
         ],
         "RenderPosition": 1
@@ -305,48 +288,26 @@
         "VerifyResourceIntegrity": false,
         "Dependencies": [],
         "RenderPosition": 1
-      }
-    },
-    "stylesheets": {
-      "dotvvm.fileUpload-css": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
-          "Assembly": "DotVVM.Framework, Version=1.1.7.0, Culture=neutral, PublicKeyToken=23f3607db32275da",
-          "Name": "DotVVM.Framework.Resources.Scripts.DotVVM.FileUpload.css",
-          "DebugFilePath": null
-        },
-        "LocationFallback": null,
-        "MimeType": "text/css",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [],
-        "RenderPosition": 0
       },
-      "dotvvm.businesspack-css": {
+      "dotvvm.businesspack": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
           "Assembly": "DotVVM.BusinessPack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=77e8efd43b7ae75f",
-          "Name": "DotVVM.BusinessPack.Resources.BusinessPack.min.css",
+          "Name": "DotVVM.BusinessPack.Resources.BusinessPack.min.js",
           "DebugFilePath": null
         },
         "LocationFallback": null,
-        "MimeType": "text/css",
+        "MimeType": "text/javascript",
         "VerifyResourceIntegrity": false,
         "Dependencies": [
-          "dotvvm.font-awesome-css"
+          "dotvvm.businesspack-css",
+          "jquery",
+          "dotvvm"
         ],
-        "RenderPosition": 0
-      },
-      "style": {
-        "Location": {
-          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
-          "FilePath": "wwwroot/Stylesheets/style.css"
-        },
-        "LocationFallback": null,
-        "MimeType": "text/css",
-        "VerifyResourceIntegrity": false,
-        "Dependencies": [],
-        "RenderPosition": 0
-      },
+        "RenderPosition": 1
+      }
+    },
+    "stylesheets": {
       "bootstrrap": {
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
@@ -375,6 +336,45 @@
         "Location": {
           "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
           "FilePath": "wwwroot/Stylesheets/style_cards.css"
+        },
+        "LocationFallback": null,
+        "MimeType": "text/css",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [],
+        "RenderPosition": 0
+      },
+      "dotvvm.businesspack-css": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
+          "Assembly": "DotVVM.BusinessPack, Version=1.1.5.0, Culture=neutral, PublicKeyToken=77e8efd43b7ae75f",
+          "Name": "DotVVM.BusinessPack.Resources.BusinessPack.min.css",
+          "DebugFilePath": null
+        },
+        "LocationFallback": null,
+        "MimeType": "text/css",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [
+          "dotvvm.font-awesome-css"
+        ],
+        "RenderPosition": 0
+      },
+      "dotvvm.fileUpload-css": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.EmbeddedResourceLocation, DotVVM.Framework",
+          "Assembly": "DotVVM.Framework, Version=1.1.7.0, Culture=neutral, PublicKeyToken=23f3607db32275da",
+          "Name": "DotVVM.Framework.Resources.Scripts.DotVVM.FileUpload.css",
+          "DebugFilePath": null
+        },
+        "LocationFallback": null,
+        "MimeType": "text/css",
+        "VerifyResourceIntegrity": false,
+        "Dependencies": [],
+        "RenderPosition": 0
+      },
+      "style": {
+        "Location": {
+          "$type": "DotVVM.Framework.ResourceManagement.FileResourceLocation, DotVVM.Framework",
+          "FilePath": "wwwroot/Stylesheets/style.css"
         },
         "LocationFallback": null,
         "MimeType": "text/css",
