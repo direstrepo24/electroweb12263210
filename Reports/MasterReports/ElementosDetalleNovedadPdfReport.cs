@@ -5,6 +5,7 @@ using System.Linq;
 using AutoMapper;
 using Electro.model.datatakemodel;
 using electroweb.DTO;
+using electroweb12263210.Routes;
 using PdfRpt.Core.Contracts;
 using PdfRpt.Core.Helper;
 using PdfRpt.FluentInterface;
@@ -270,8 +271,9 @@ namespace electroweb.Reports.MasterReports
 																				</tr>
 																			</table>",resumen_poste,detalle_elemento.Elemento_Id,detalle_elemento.Nombre_Detalle_Tipo_Novedad,detalle_elemento.Longitud,detalle_elemento.Nombre_Estado,detalle_elemento.Valor_Nivel_Tension,detalle_elemento.AlturaDisponible,detalle_elemento.ResistenciaMecanica,detalle_elemento.Nombre_Material,detalle_elemento.Retenidas,detalle_elemento.Direccion_Elemento,detalle_elemento.Coordenadas_Elemento);
 
-                                                        var listfotos= new List<FotoViewModel>();
-														 listfotos=detalle_elemento.Fotos;
+                                                       ///FOTOS
+
+														var listfotos=detalle_elemento.Fotos;
 														var tablafotos=string.Format(@"
 															<table  style='width: 100%; font-size:7pt;font-family:tahoma;'>
 																<tr >
@@ -280,37 +282,36 @@ namespace electroweb.Reports.MasterReports
 																</tr>
 															</table>
 															<table border='1'  style='  font-size:5pt;font-family:tahoma;'>											
+																
 																");
-
-                                                      
 														var countfotos=listfotos.Count;
 														var i =0;
 														var recuadro_empty= Path.Combine(wwwroot, "Images","recuaadro.png");
 
 														if(countfotos>4){
+																
 																foreach(var foto in listfotos){
 																	if(foto.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
 																		foto.Ruta="/Images/recuaadro.png";
 																	}
-																	
 																	i=i+1;
 																	//Fila 1
 																	if(i==1){
 																		tablafotos += @"<tr align='center'>";
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																	}else if(i==2){
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																	}else if(i==3){
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																	}else if(i==4){
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																		tablafotos += @"</tr>";
 																	}
 
 																	//Fila 2
 																	else if(i==5){
 																		tablafotos += @"<tr align='center'>";
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																		if(countfotos==5){
 																		  tablafotos +=string.Format(@"<td>{0}</td>","");
 																		  tablafotos +=string.Format(@"<td>{0}</td>","");
@@ -318,7 +319,7 @@ namespace electroweb.Reports.MasterReports
 																		  tablafotos += @"</tr>";
 																		}
 																	}else if(i==6){
-																			tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																			tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {1}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																			if(countfotos==6){
 																		  	//	tablafotos +=string.Format(@"<td><img  width='120'  src='{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>",recuadro_empty,"","");
 																		  		tablafotos +=string.Format(@"<td>{0}</td>","");
@@ -326,13 +327,14 @@ namespace electroweb.Reports.MasterReports
 																				tablafotos += @"</tr>";
 																			}
 																	}else if(i==7){
-																			tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		    
+																			tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																			if(countfotos==7){
 																		  		tablafotos +=string.Format(@"<td>{0}</td>","");
 																				tablafotos += @"</tr>";
 																			}
 																	}else if(i==8){
-																			tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																			tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>",Routes.RouteFotoRepository, foto.Ruta,foto.Titulo,foto.Descripcion );
 																			tablafotos += @"</tr>";
 																	}
 																}
@@ -343,21 +345,19 @@ namespace electroweb.Reports.MasterReports
 																if(foto.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
 																	foto.Ruta="/Images/recuaadro.png";
 																}
-																		
 																i=i+1;
 																if(i==1){
-																	   tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																	   tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																}else if(i==2){
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																}else if(i==3){
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );
 																}else if(i==4){
-																		tablafotos += string.Format(@"<td><img  width='120'  src='http://181.60.56.39:89{0}' /><p>Titulo: {1}</p><p>Descripcion: {2}</p></td>", foto.Ruta,foto.Titulo,foto.Descripcion );
+																		tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository, foto.Ruta,foto.Titulo,foto.Descripcion );
 																}
 															}
 															tablafotos += @"</tr>";
 														}
-														
 														tablafotos += @"</table>";
 
 												return string.Format(@"{0}{1}",posteHeader,tablafotos);

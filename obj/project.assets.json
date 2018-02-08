@@ -20949,26 +20949,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\user\\.nuget\\packages\\": {},
+    "C:\\Users\\usuario\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "f:\\PROYECTOS\\DataTake\\Web\\electroweb12263210\\electroweb.csproj",
+      "projectUniqueName": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
       "projectName": "electroweb",
-      "projectPath": "f:\\PROYECTOS\\DataTake\\Web\\electroweb12263210\\electroweb.csproj",
-      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "f:\\PROYECTOS\\DataTake\\Web\\electroweb12263210\\obj\\",
+      "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
+      "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
+      "outputPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "f:\\PROYECTOS\\DataTake\\Web\\electroweb12263210\\NuGet.Config",
-        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\NuGet.Config",
+        "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
@@ -20984,11 +20984,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "f:\\PROYECTOS\\DataTake\\Web\\datamakerslib\\datamakerslib.csproj": {
-              "projectPath": "f:\\PROYECTOS\\DataTake\\Web\\datamakerslib\\datamakerslib.csproj"
+            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj": {
+              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj"
             },
-            "f:\\PROYECTOS\\DataTake\\Web\\Electro.model\\Electro.model.csproj": {
-              "projectPath": "f:\\PROYECTOS\\DataTake\\Web\\Electro.model\\Electro.model.csproj"
+            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj": {
+              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj"
             }
           }
         }
