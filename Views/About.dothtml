@@ -65,9 +65,9 @@
                  <th></th>
                 </tr>
                  <tr >
-                <th><h5> <strong>Recaudo Total Anual  : </strong> </h5></th>
+                <th><h5> <strong>Recaudo Total Anual Estimado : </strong> </h5></th>
                 <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: ValorAnualRecaudoTotal}}</strong></button></th>
-                <th><h5> <strong>Recaudo Total Mensual  : </strong> </h5></th>
+                <th><h5> <strong>Recaudo Total Mensual Estimado : </strong> </h5></th>
                 <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: ValorMensualRecaudoTotal}}</strong></button></th>
                 </tr>
 
@@ -137,7 +137,7 @@
      
 
                 <bp:GridViewTemplateColumn 
-                                    HeaderText="Recaudo Total Anual Ocupaciones"
+                                    HeaderText="Recaudo Total Anual Ocupaciones Estimado"
                                     AllowSorting="true" >
                     <ContentTemplate>
                         <span class="btn btn-link btn-lg btn-block">{{value: RecaudoAnual}}</span>
@@ -147,7 +147,7 @@
 
             
                 <bp:GridViewTemplateColumn 
-                                    HeaderText="Recaudo Total Mensual Ocupaciones"
+                                    HeaderText="Recaudo Total Mensual Ocupaciones Estimado"
                                     AllowSorting="true" >
                     <ContentTemplate>
                         <span class="btn btn-link btn-lg btn-block">{{value: RecaudoMensual}}</span>
@@ -178,11 +178,11 @@
                   <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: SelectedReportGeneralViewModel.Ocupaciones}}</strong></button></th>
                 </tr>
                 <tr >
-                <th><h5> <strong>Recaudo Total Anual  :</strong> </h5></th>
+                <th><h5> <strong>Recaudo Total Anual Estimado :</strong> </h5></th>
                   <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: SelectedReportGeneralViewModel.RecaudoAnual}}</strong></button></th>
                 </tr>
                  <tr >
-                <th><h5> <strong>Recaudo Total Mensual  :</strong> </h5></th>
+                <th><h5> <strong>Recaudo Total Mensual Estimado :</strong> </h5></th>
                   <th><button type="button" class="btn btn-lg btn-warning"><strong> {{value: SelectedReportGeneralViewModel.RecaudoMensual}}</strong></button></th>
                 </tr>
             </tbody>
@@ -218,7 +218,7 @@
                 </bp:GridViewTemplateColumn>
                                  
                <bp:GridViewTemplateColumn 
-                                    HeaderText="Recaudo"
+                                    HeaderText="Recaudo Anual Estimado"
                                     AllowSorting="true" >
                     <ContentTemplate>
                         <span class="btn btn-link btn-lg btn-block">{{value: Recaudo_Longitud}}</span>

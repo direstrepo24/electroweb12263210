@@ -26,3 +26,17 @@ e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\da
 e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\Electro.model.dll
 e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\datamakerslib.pdb
 e:\PROYECTOS\DATA_TAKE\Electrocore\electroweb12263210\bin\Debug\netcoreapp2.0\Electro.model.pdb
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.deps.json
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.runtimeconfig.json
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.runtimeconfig.dev.json
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.dll
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\electroweb.pdb
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\datamakerslib.dll
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\Electro.model.dll
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\datamakerslib.pdb
+F:\PROYECTOS\DataTake\Web\electroweb12263210\bin\Debug\netcoreapp2.0\Electro.model.pdb
+F:\PROYECTOS\DataTake\Web\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.csproj.CoreCompileInputs.cache
+F:\PROYECTOS\DataTake\Web\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.AssemblyInfoInputs.cache
+F:\PROYECTOS\DataTake\Web\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.AssemblyInfo.cs
+F:\PROYECTOS\DataTake\Web\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.dll
+F:\PROYECTOS\DataTake\Web\electroweb12263210\obj\Debug\netcoreapp2.0\electroweb.pdb
