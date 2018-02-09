@@ -14,7 +14,7 @@ namespace electroweb.Reports.MasterReports
 {
     public class ElementosDetalleByUsuarioPdfReport
     {
-		 public static string RouteFotoRepository="http://181.60.56.39:89/Fotos1";
+		 public static string RouteFotoRepository="http://181.60.56.39:89";
         public static byte[] CreateInMemoryPdfReport(string wwwroot,List<ElementoReportViewModel> ListElementos)
         {
 			
