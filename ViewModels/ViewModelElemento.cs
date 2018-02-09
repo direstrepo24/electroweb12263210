@@ -998,7 +998,7 @@ namespace electroweb.ViewModels
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
             ElementosDetallePdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
             
-            
+            //Revisar nombres con tildes
             Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",SelectedCiudad.Nombre), "application/pdf");
         }
 

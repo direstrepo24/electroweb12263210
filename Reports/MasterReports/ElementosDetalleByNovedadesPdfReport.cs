@@ -280,6 +280,9 @@ namespace electroweb.Reports.MasterReports
 																foreach(var foto in listfotos){
 																	if(foto.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
 																		foto.Ruta="/Images/recuaadro.png";
+																	}else if(foto.Ruta.ToUpper().Contains("/Fotos1".ToUpper())){
+																		 string replaceFoto =foto.Ruta.Replace("/Fotos1", "");
+																		 foto.Ruta=replaceFoto;
 																	}
 																	i=i+1;
 																	//Fila 1
@@ -331,7 +334,10 @@ namespace electroweb.Reports.MasterReports
 															foreach(var foto in listfotos){
 																if(foto.Ruta.ToUpper().Contains("Foto Nula".ToUpper())){
 																	foto.Ruta="/Images/recuaadro.png";
-																}
+																}else if(foto.Ruta.ToUpper().Contains("/Fotos1".ToUpper())){
+																		 string replaceFoto =foto.Ruta.Replace("/Fotos1", "");
+																		 foto.Ruta=replaceFoto;
+																	}
 																i=i+1;
 																if(i==1){
 																	   tablafotos += string.Format(@"<td><img  width='120'  src='{0}{1}' /><p>Titulo: {2}</p><p>Descripcion: {3}</p></td>", Routes.RouteFotoRepository,foto.Ruta,foto.Titulo,foto.Descripcion );

@@ -323,11 +323,6 @@ namespace electroweb.ViewModels
 
                 decimal  percentaje = 0m;
 
-               
-               
-
-
-
                 if(Empresa_Id==0){
                     Apoyos_Empresa= allCables.Where(a=>a.Empresa_Id==item.FirstOrDefault().Empresa_Id).GroupBy(a=>a.Elemento_Id).Count();
                     OcupacionesOperador=allCables.Where(a=>a.Empresa_Id==item.FirstOrDefault().Empresa_Id).AsEnumerable().Sum(a=>a.Cantidad_Cable);
@@ -354,6 +349,8 @@ namespace electroweb.ViewModels
 
                  foreach(var itemlongitud in longitudElementos){
                      var cantidadOcupacionesLongitud= allCables.Where(a=>a.Empresa_Id==item.FirstOrDefault().Empresa_Id && a.Longitud_Elemento_Id==itemlongitud.Id).AsEnumerable().Sum(a=>a.Cantidad_Cable);
+                     var allposteslongitud= allCables.Where(a=>a.Empresa_Id==item.FirstOrDefault().Empresa_Id && a.Longitud_Elemento_Id==itemlongitud.Id).GroupBy(a=>a.Elemento_Id).Count();
+                     
                       if(itemlongitud.Valor==6){
                            SumaTotalRecaudo+=cantidadOcupacionesLongitud*37806;
                            ValorAnualNorma=string.Format("$ {0}",37.806);
@@ -392,8 +389,9 @@ namespace electroweb.ViewModels
                           ValorAnualNorma=ValorAnualNorma,
                           Recaudo_Longitud=string.Format("$ {0:N2}", Recaudo_Longitud),
                           Longitud_Elemento=Longitud_Elemento,
-                          Total_Ocupaciones=cantidadOcupacionesLongitud
-
+                          Total_Ocupaciones=cantidadOcupacionesLongitud,
+                          Total_Postes=allposteslongitud,
+                          Recaudo_Mensual_Longitud=  string.Format("$ {0:N2}", Recaudo_Longitud/12)
                       });
                  }
 
@@ -554,7 +552,12 @@ namespace electroweb.ViewModels
         public string ValorAnualNorma {get; set;}
         public double Longitud_Elemento {get; set;}
         public long Total_Ocupaciones {get; set;}
+         public long Total_Postes {get; set;}
         public string Recaudo_Longitud {get; set; }
+
+        public string Recaudo_Mensual_Longitud {get; set; }
+
+        
     }
 
 

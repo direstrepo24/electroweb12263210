@@ -240,13 +240,12 @@
             </Columns>
         </bp:GridView>
 
-        <bp:ModalDialog IsDisplayed="{value: IsModalDisplayed}">
+        <bp:ModalDialog   MinWidth="900" IsDisplayed="{value: IsModalDisplayed}">
            <table class="table">
             <tbody>
                 <tr >
                 <th>
                     <h5> <strong>Operador:   </strong> </h5>
-
                 </th>
                  <th><button type="button" class="btn btn-lg btn-outline-warning"><strong> {{value: SelectedReportGeneralViewModel.Operador}}</strong></button></th>
                 </tr>
@@ -271,12 +270,19 @@
         <h3>Clasificación</h3>
           <bp:GridView class="table" DataSource="{value: ListReportLongitud}">
             <Columns>
-              
-
                  <bp:GridViewTemplateColumn   HeaderText="Longitud"
                                     AllowSorting="true" >
                     <ContentTemplate >
                               <span class="btn btn-link btn-lg btn-block">{{value: Longitud_Elemento}}</span>
+                    </ContentTemplate>
+                </bp:GridViewTemplateColumn>
+                 <bp:GridViewTemplateColumn 
+                                    HeaderText="Total Postes"
+                                    AllowSorting="true"
+                                    >
+                                    <ContentTemplate>
+
+                    <span class="btn btn-link btn-lg btn-block">{{value: Total_Postes}}</span>
                     </ContentTemplate>
                 </bp:GridViewTemplateColumn>
                 <bp:GridViewTemplateColumn 
@@ -296,6 +302,14 @@
                         <span class="btn btn-link btn-lg btn-block">{{value: ValorAnualNorma}}</span>
                     </ContentTemplate>
                 
+                </bp:GridViewTemplateColumn>
+
+                 <bp:GridViewTemplateColumn 
+                                    HeaderText="Recaudo Mensual Estimado"
+                                    AllowSorting="true" >
+                    <ContentTemplate>
+                        <span class="btn btn-link btn-lg btn-block">{{value: Recaudo_Mensual_Longitud}}</span>
+                    </ContentTemplate>
                 </bp:GridViewTemplateColumn>
                                  
                <bp:GridViewTemplateColumn 

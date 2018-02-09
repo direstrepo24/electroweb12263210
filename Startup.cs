@@ -61,6 +61,7 @@ namespace electroweb
 
 
             //AUTH
+            
               services.AddAuthentication(sharedOptions =>
                 {
                     sharedOptions.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -75,7 +76,6 @@ namespace electroweb
                     };
                     options.LoginPath = new PathString("/login");
                 });
-
 
             
              // Add converter to DI
@@ -145,7 +145,7 @@ namespace electroweb
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
 
-            app.UseAuthentication();
+           app.UseAuthentication();
 
            
             loggerFactory.AddConsole();
