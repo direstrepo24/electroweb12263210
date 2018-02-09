@@ -316,6 +316,8 @@ namespace electroweb.ViewModels
 
             foreach(var item in groupEmpresas){
 
+                
+
                 var Apoyos_Empresa= allApoyos.Count;
 
                 long OcupacionesOperador= 0;
@@ -406,9 +408,28 @@ namespace electroweb.ViewModels
                 string valor_recaudo_anual = string.Format("$ {0:N2}", SumaTotalRecaudo);
 
                  string valor_recaudo_menusal = string.Format("$ {0:N2}", SumaTotalRecaudo/12);
-            
 
-                listEmpresasReport.Add(new ReportGeneralViewModel{
+                 var empresa=item.FirstOrDefault().Nombre_Empresa;
+
+              
+                 if(empresa.ToUpper().Contains("No Identificado".ToUpper())){
+
+                   /* listEmpresasReport.Add(new ReportGeneralViewModel{
+                    Operador=item.FirstOrDefault().Nombre_Empresa,
+                    Apoyos= Apoyos_Empresa,
+                    Ocupaciones= OcupacionesOperador,
+                    Porcentaje=valor_percentaje,
+                    RecaudoAnual=valor_recaudo_anual,
+                    RecaudoMensual=valor_recaudo_menusal,
+                    ValorLongitudes=listValorLongitudes
+                });*/
+
+
+
+
+                 }else{
+
+                    listEmpresasReport.Add(new ReportGeneralViewModel{
                     Operador=item.FirstOrDefault().Nombre_Empresa,
                     Apoyos= Apoyos_Empresa,
                     Ocupaciones= OcupacionesOperador,
@@ -417,6 +438,13 @@ namespace electroweb.ViewModels
                     RecaudoMensual=valor_recaudo_menusal,
                     ValorLongitudes=listValorLongitudes
                 });
+
+                }
+            
+
+             
+
+
             }
 
             ValorAnualRecaudoTotal=string.Format("$ {0:N2}", TotaRecaudo);
