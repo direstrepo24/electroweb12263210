@@ -19,6 +19,7 @@ using DotVVM.BusinessPack.Export.Csv;
 using DotVVM.Framework.Controls;
 using electroweb.Reports.MasterReports;
 using Electro.model.DataContext;
+using System.Text;
 
 namespace electroweb.ViewModels
 {
@@ -811,8 +812,13 @@ namespace electroweb.ViewModels
 
             string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
+            
+            var usuername= string.Format("{0} {1}",SelectedUsuario.Nombre, SelectedUsuario.Apellido);
+            var usuario= RemoveDiacritics(usuername);
+
            ElementosDetalleByUsuarioPdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-            Context.ReturnFile(outputStream, "report_detalle.pdf", "application/pdf");
+        
+            Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",usuario), "application/pdf");
         }
 
         public void ExportPdfUserPostes(){
@@ -820,7 +826,10 @@ namespace electroweb.ViewModels
             string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
             ElementosGroupByDatesPdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-            Context.ReturnFile(outputStream, "reporte_general_contabilidad.pdf", "application/pdf");
+            
+            var usuername= string.Format("{0} {1}",SelectedUsuario.Nombre, SelectedUsuario.Apellido);
+            var usuario= RemoveDiacritics(usuername);
+            Context.ReturnFile(outputStream, string.Format("reporte_general_contabilidad_{0}.pdf",usuario), "application/pdf");
         }
 
         
@@ -829,8 +838,12 @@ namespace electroweb.ViewModels
             var outputStream = new MemoryStream();
             string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
+
             ElementosByUsuarioPdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-            Context.ReturnFile(outputStream, "reporte_general.pdf", "application/pdf");
+            
+              var usuername= string.Format("{0} {1}",SelectedUsuario.Nombre, SelectedUsuario.Apellido);
+            var usuario= RemoveDiacritics(usuername);
+            Context.ReturnFile(outputStream, string.Format("reporte_general_{0}.pdf",usuario), "application/pdf");
         }
         
         public void ExportExcel()
@@ -839,9 +852,28 @@ namespace electroweb.ViewModels
                 var gridView = Context.View.FindControlByClientId<DotVVM.BusinessPack.Controls.GridView>("data", true);
                 using (var file = exporter.Export(gridView,  this.Elementos))
                 {
-                    Context.ReturnFile(file, "ReportePlano.csv", "text/csv");
+                    var usuername= string.Format("{0} {1}",SelectedUsuario.Nombre, SelectedUsuario.Apellido);
+                    var usuario= RemoveDiacritics(usuername);
+                    Context.ReturnFile(file, string.Format("reporte_general_{0}.csv",usuario), "text/csv");
                // Context.ReturnFile(file, "export.pdf", "application/pdf");
                 }
+        }
+
+        static string RemoveDiacritics(string text) 
+        {
+            var normalizedString = text.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            foreach (var c in normalizedString)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
         private async Task<IQueryable<ElementoViewModel>> GetQueryable(int size)

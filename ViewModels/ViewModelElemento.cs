@@ -997,9 +997,28 @@ namespace electroweb.ViewModels
             string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
             ElementosDetallePdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-            
+        
+            var empresa= RemoveDiacritics(SelectedCiudad.Nombre);
+
             //Revisar nombres con tildes
-            Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",SelectedCiudad.Nombre), "application/pdf");
+            Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",empresa), "application/pdf");
+        }
+
+        static string RemoveDiacritics(string text) 
+        {
+            var normalizedString = text.Normalize(NormalizationForm.FormD);
+            var stringBuilder = new StringBuilder();
+
+            foreach (var c in normalizedString)
+            {
+                var unicodeCategory = CharUnicodeInfo.GetUnicodeCategory(c);
+                if (unicodeCategory != UnicodeCategory.NonSpacingMark)
+                {
+                    stringBuilder.Append(c);
+                }
+            }
+
+            return stringBuilder.ToString().Normalize(NormalizationForm.FormC);
         }
 
         public void ExporGeneralPdf(){
@@ -1008,10 +1027,11 @@ namespace electroweb.ViewModels
             string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
             string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
 
+             var empresa= RemoveDiacritics(SelectedCiudad.Nombre);
 
 
          ElementosPdfReport.CreateHtmlHeaderPdfReportStream(_hostingEnvironment.WebRootPath, outputStream, ReportElementos,date_start_report,date_end_report);
-          Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",SelectedCiudad.Nombre), "application/pdf");
+          Context.ReturnFile(outputStream, string.Format("report_detalle_{0}.pdf",empresa), "application/pdf");
         }
         
         public void ExportExcel(){

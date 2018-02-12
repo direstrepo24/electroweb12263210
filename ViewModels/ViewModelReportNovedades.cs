@@ -776,6 +776,8 @@ namespace electroweb.ViewModels
         }
         
 
+        
+
         public void ExportExcel()
         {
                 var exporter = new GridViewExportCsv<ElementoReportViewModel>(new GridViewExportCsvSettings<ElementoReportViewModel> { Separator = ";" });
