@@ -20956,18 +20956,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
+      "projectUniqueName": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
       "projectName": "electroweb",
-      "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
+      "projectPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\electroweb.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\obj\\",
+      "outputPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\NuGet.Config",
+        "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\electroweb12263210\\NuGet.Config",
         "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
@@ -20984,11 +20984,11 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj": {
-              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj"
+            "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj": {
+              "projectPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\datamakerslib\\datamakerslib.csproj"
             },
-            "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj": {
-              "projectPath": "e:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj"
+            "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj": {
+              "projectPath": "E:\\PROYECTOS\\DATA_TAKE\\Electrocore\\Electro.model\\Electro.model.csproj"
             }
           }
         }

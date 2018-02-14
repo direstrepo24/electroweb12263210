@@ -1272,7 +1272,10 @@ namespace electroweb.ViewModels
             }
 
         var archivo=file.OpenRead();
-        Context.ReturnFile(archivo, string.Format("Inventario_{0}.xlsx",empresa), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+
+        var empresaNameFormated= RemoveDiacritics(empresa);
+
+        Context.ReturnFile(archivo, string.Format("Inventario_{0}.xlsx",empresaNameFormated), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
      }
 
         #endregion
