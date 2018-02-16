@@ -86,9 +86,9 @@ namespace electroweb.ViewModels
             foreach(var item in ciudadades){
                 i=i+1;
                 if(i==ciudadades.Count()){
-                    CiudadesInventariadas+=string.Format("{0}",item.FirstOrDefault().Ciudad.Nombre);
+                    CiudadesInventariadas+=string.Format("{0} \n\r",item.FirstOrDefault().Ciudad.Nombre);
                 }else if(i>=1){
-                    CiudadesInventariadas+=string.Format("{0},",item.FirstOrDefault().Ciudad.Nombre);
+                    CiudadesInventariadas+=string.Format("{0}, \n\r",item.FirstOrDefault().Ciudad.Nombre);
                 }
             }
             //Cables.AsEnumerable().Sum(a=>a.Cantidad)

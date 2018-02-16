@@ -56,7 +56,6 @@
                   <div class="clash-card__unit-description">
                    <h5>{{value: CiudadesInventariadas}}</h5>
                    <br>
-                   <br>
                 </div>
 
                 <div class="clash-card__unit-stats clash-card__unit-stats--goblin clearfix">
