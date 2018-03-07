@@ -126,7 +126,10 @@
                 <div class="clash-card__level clash-card__level--wizard">Consultar Registros</div>
                 <div class="clash-card__unit-name">Cable Operadores</div>
                 <div class="clash-card__unit-description">
-                  <button style="margin-top:25px;" class="btn btn-primary btn-lg">Ingresar</button>
+                <!--  <button style="margin-top:25px;" class="btn btn-primary btn-lg">Ingresar</button>-->
+
+                     <dot:Button    class="btn btn-primary btn-lg"   Text="Ingresar"  >
+         </dot:Button>
                   
                 <br>
                 <br>

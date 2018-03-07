@@ -1241,7 +1241,7 @@ namespace electroweb.ViewModels
                        // numero_apoyo= numero_apoyo+1;
                             //for(int i=0; i<=dataList.Count;i++){
                             IRow row = excelSheet.GetRow(11+j);
-                            row.GetCell(0).SetCellValue(item.Id);
+                            row.GetCell(0).SetCellValue(item.Elemento_Id);
                             row.GetCell(1).SetCellValue(item.CodigoApoyo);
                             row.GetCell(2).SetCellValue(item.Sigla_Material);
                             row.GetCell(3).SetCellValue(item.Longitud);

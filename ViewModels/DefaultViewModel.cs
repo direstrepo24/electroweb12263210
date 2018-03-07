@@ -11,6 +11,9 @@ using Electro.model.datatakemodel;
 using System.Globalization;
 using System.Web;
 using DotVVM.Framework.Runtime.Filters;
+using DotVVM.Framework.Hosting;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace electroweb.ViewModels
 {
@@ -33,7 +36,6 @@ namespace electroweb.ViewModels
         public string LamparaAdicional {get; set;}
         public string RequierePoda {get; set;}
 
-         
 
         #endregion
 
@@ -66,6 +68,16 @@ namespace electroweb.ViewModels
             IsEnabled = false;
             IsVisible = true;
             
+        }
+
+
+        public void Security()
+        {
+            // sign out
+            var identity = (ClaimsIdentity)Context.HttpContext.User.Identity;
+             //Context.GetAuthentication().SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+             //   Context.RedirectToRoute("Login");
+         
         }
 
         public void HideButton()
@@ -110,6 +122,8 @@ namespace electroweb.ViewModels
             LamparaAdicional=string.Format("{0}",lampara_adicional.AsEnumerable().Sum(a=>a.Cantidad)+lampara_adicional_count_cant_0);
 
             RequierePoda=string.Format("{0}",requieren_poda.Count);
+
+         
 
         }
 
