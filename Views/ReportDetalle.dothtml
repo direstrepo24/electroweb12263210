@@ -91,7 +91,7 @@
 
 
       
-          
+        <bp:Button Visible="{value: IsVisibleExportExcell}"   Text="Exportar Excel Plano" Click="{command: LLenarExcelPlano()}" />
         <bp:Button Visible="{value: IsVisibleExportExcell}"   Text="Exportar Excel" Click="{command: LLenarExcel()}" />
         <bp:Button  Visible="{value: IsVisibleExportPdf}"  Text="Exportar Pdf" Click="{command: ExportPdf()}" />
          <!--  <bp:Button  Text="Reporte Detallado" Click="{command: ExportDetalladoPdf()}" />

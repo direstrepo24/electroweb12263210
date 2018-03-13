@@ -33,6 +33,8 @@ using NPOI.XSSF.UserModel;
 using NPOI.HSSF.Util;
 using Electro.model.DataContext;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using NPOI.HSSF.UserModel;
 
 namespace electroweb.ViewModels
 {
@@ -696,6 +698,7 @@ namespace electroweb.ViewModels
                 var ConectadoRbt="";
                 var MedidorBt="";
                 var Otro_Equipo="";
+                var Empresa_Equipo="";
 
                 if(viewModelMap.CodigoApoyo==null || viewModelMap.CodigoApoyo==""){
                     //Verificar la novedad del codigo de apoyo vacio
@@ -713,21 +716,25 @@ namespace electroweb.ViewModels
                     list.Add(item.FirstOrDefault().Elemento);
                 } */
                 //Si es una consulta por operador se habilita
-                //Equipos
+                //Equipos     a=>a.Elemento_Id==item.Elemento_Id, b=>b.TipoEquipo,c=>c.Ciudad_Empresa, d=>d.Ciudad_Empresa.Empresa
                 if(Ciudad_Id>0 && Empresa_Id>0){
-                    var equiposElementos= await _equipoElementoRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==item.Elemento_Id);
+                    var equiposElementos= await _equipoElementoRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==item.Elemento_Id, b=>b.TipoEquipo,c=>c.Ciudad_Empresa, d=>d.Ciudad_Empresa.Empresa);
                     foreach(var queryequipo in equiposElementos.ToList()){
                             var mapEquipo= _mapper.Map<EquipoElemento, EquipoViewModel>(queryequipo);
                             ConectadoRbt=mapEquipo.ConectadoRbt;
                             MedidorBt=mapEquipo.MedidorBt;
                             if(mapEquipo.TipoEquipo_Id==1){//Id equivale a Fuente 
                                 Tiene_Fuente="SI";
+                                Empresa_Equipo=queryequipo.Ciudad_Empresa.Empresa.Nombre;
                             }else if(mapEquipo.TipoEquipo_Id==2){//Id equivale a Amplificador 
                                 Tiene_Amplificador="SI";
+                                Empresa_Equipo=queryequipo.Ciudad_Empresa.Empresa.Nombre;
                             }else if(mapEquipo.TipoEquipo_Id==3){//Id equivale a Nodo 
                                 Tiene_DistribuidorFibra="SI";
+                                Empresa_Equipo=queryequipo.Ciudad_Empresa.Empresa.Nombre;
                             }else if(mapEquipo.TipoEquipo_Id==4){//Id equivale a Empalme
                                 Tiene_DistribuidorFibra="SI";
+                                Empresa_Equipo=queryequipo.Ciudad_Empresa.Empresa.Nombre;
                             }else if(mapEquipo.TipoEquipo_Id==5){//Id equivale a Otros
                                 Otro_Equipo="SI";
                             }
@@ -741,6 +748,7 @@ namespace electroweb.ViewModels
                 viewModelMap.MedidorBt=MedidorBt;
                 viewModelMap.Otro_Equipo=Otro_Equipo;
                  viewModelMap.NumeroApoyo= item.Elemento_Id;
+                  viewModelMap.Empresa_Equipo= Empresa_Equipo;
                 list.Add(viewModelMap);
             }
 
@@ -1276,6 +1284,187 @@ namespace electroweb.ViewModels
         var empresaNameFormated= RemoveDiacritics(empresa);
 
         Context.ReturnFile(archivo, string.Format("Inventario_{0}.xlsx",empresaNameFormated), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+     }
+
+
+
+
+
+     public void LLenarExcelPlano()
+    {
+
+        string empresa= string.Empty;
+         
+        string sWebRootFolder = _hostingEnvironment.WebRootPath;
+        string sFileName = @"Inventario_Plano_.xlsx";
+        FileInfo file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
+        var memory = new MemoryStream();
+        /*
+           var outputStream = new MemoryStream();
+            ElementosPdfReport.CreateInMemoryPdfReport(_hostingEnvironment.WebRootPath, ReportElementos);
+            Context.ReturnFile(outputStream,  string.Format("report_{0}.xlsx",SelectedCiudad.Nombre), "application/ms-excel");*/
+
+        if (file.Exists)
+        {
+            file.Delete();
+            file = new FileInfo(Path.Combine(sWebRootFolder, sFileName));
+        }
+
+       
+            using (var fs = new FileStream(Path.Combine(sWebRootFolder, sFileName), FileMode.Create, FileAccess.Write))
+            {
+                IWorkbook workbook;
+                workbook = new XSSFWorkbook();
+                ISheet excelSheet = workbook.CreateSheet("Inventario");
+                IRow row = excelSheet.CreateRow(0);
+                  row.Height=30 * 13;
+
+                var style1 = workbook.CreateCellStyle();
+                  style1.FillForegroundColor = HSSFColor.Orange.Index;
+                  style1.FillPattern = FillPattern.SolidForeground;
+                
+                    /* 
+                    foreach (DataColumn column in ReportElementos.ToList())
+                    {
+                        int rowIndex = 0;
+                        foreach (DataRow row2 in ReportElementos.ToList())
+                        {
+                            HSSFRow dataRow = sheet1.CreateRow(rowIndex);
+                            dataRow.CreateCell(column.Ordinal).SetCellValue(row2[column].ToString());
+                            rowIndex++;
+                        }
+                        sheet1.AutoSizeColumn(column.Ordinal);
+                    }
+                    */
+
+                row.CreateCell(0).SetCellValue("Numero Apoyo");
+                row.GetCell(0).CellStyle=style1;
+             
+               
+
+                row.CreateCell(1).SetCellValue("Codigo Apoyo");
+                row.GetCell(1).CellStyle=style1;
+ 
+
+                row.CreateCell(2).SetCellValue("Long. Poste");
+                row.GetCell(2).CellStyle=style1;
+
+                row.CreateCell(3).SetCellValue("Estado");
+                row.GetCell(3).CellStyle=style1;
+
+                row.CreateCell(4).SetCellValue("Nivel Tension");
+                row.GetCell(4).CellStyle=style1;
+
+                row.CreateCell(5).SetCellValue("Altura Disponible");
+                row.GetCell(5).CellStyle=style1;
+
+                row.CreateCell(6).SetCellValue("Resistencia Mecanica");
+                row.GetCell(6).CellStyle=style1;
+
+                row.CreateCell(7).SetCellValue("Material");
+                row.GetCell(7).CellStyle=style1;
+
+                row.CreateCell(8).SetCellValue("Retenidas");
+                row.GetCell(8).CellStyle=style1;
+
+                row.CreateCell(9).SetCellValue("Direccion");
+                row.GetCell(9).CellStyle=style1;
+                
+                row.CreateCell(10).SetCellValue("Coordenadas");
+                row.GetCell(10).CellStyle=style1;
+
+                row.CreateCell(11).SetCellValue("Cable");
+                row.GetCell(11).CellStyle=style1;
+
+                row.CreateCell(12).SetCellValue("Tipo Cable");
+                row.GetCell(12).CellStyle=style1;
+
+                row.CreateCell(13).SetCellValue("Operador");
+                row.GetCell(13).CellStyle=style1;
+
+                row.CreateCell(14).SetCellValue("Nivel Ocupaion");
+                row.GetCell(14).CellStyle=style1;
+
+                row.CreateCell(15).SetCellValue("Esta el cable sobre RBT ?");
+                row.GetCell(15).CellStyle=style1;
+
+                row.CreateCell(16).SetCellValue("El cable cuenta con marquilla ?");
+                row.GetCell(16).CellStyle=style1;
+            
+
+                row.CreateCell(17).SetCellValue("Amplificador");
+                row.GetCell(17).CellStyle=style1;
+
+                row.CreateCell(18).SetCellValue("Fuente");
+                row.GetCell(18).CellStyle=style1;
+
+                row.CreateCell(19).SetCellValue("Distribuidor de fibra");
+                row.GetCell(19).CellStyle=style1;
+
+                row.CreateCell(20).SetCellValue("Conectado a red electrica");
+                row.GetCell(20).CellStyle=style1;
+
+                row.CreateCell(21).SetCellValue("Operador del Equipo");
+                row.GetCell(21).CellStyle=style1;
+
+                var dataList= new List<ElementoReportViewModel>();
+               
+                dataList=  ReportElementos.ToList();
+                 empresa= dataList.FirstOrDefault().Nombre_Empresa;
+                var j = 1;
+                foreach (var item in dataList)
+                {       
+                       // numero_apoyo= numero_apoyo+1;
+                            //for(int i=0; i<=dataList.Count;i++){
+
+                            IRow rowData =excelSheet.CreateRow(j);
+
+                            //row = excelSheet.CreateRow(j);
+                            rowData.CreateCell(0).SetCellValue(item.Elemento_Id);
+                            rowData.CreateCell(1).SetCellValue(item.CodigoApoyo);
+                            rowData.CreateCell(2).SetCellValue(item.Longitud);
+                            rowData.CreateCell(3).SetCellValue(item.Nombre_Estado);
+                            rowData.CreateCell(4).SetCellValue(item.Sigla_Nivel_Tension);
+                            rowData.CreateCell(5).SetCellValue(item.AlturaDisponible);
+                            rowData.CreateCell(6).SetCellValue(item.ResistenciaMecanica);
+                            rowData.CreateCell(7).SetCellValue(item.Nombre_Material);
+                            rowData.CreateCell(8).SetCellValue(item.Retenidas);
+                            rowData.CreateCell(9).SetCellValue(item.Direccion_Elemento);
+                            rowData.CreateCell(10).SetCellValue(item.Coordenadas_Elemento);
+                            rowData.CreateCell(11).SetCellValue(item.Nombre_Cable);
+                            rowData.CreateCell(12).SetCellValue(item.Nombre_Tipo_Cable);
+                            rowData.CreateCell(13).SetCellValue(item.Nombre_Empresa);
+                            rowData.CreateCell(14).SetCellValue(item.Cantidad_Cable);
+                            rowData.CreateCell(15).SetCellValue(item.SobreRbt);
+                            rowData.CreateCell(16).SetCellValue(item.Tiene_Marquilla);
+                            rowData.CreateCell(17).SetCellValue(item.Tiene_Amplificador);
+                            rowData.CreateCell(18).SetCellValue(item.Tiene_Fuente);
+                            rowData.CreateCell(19).SetCellValue(item.Tiene_DistribuidorFibra);
+                            rowData.CreateCell(20).SetCellValue(item.ConectadoRbt);
+                            rowData.CreateCell(21).SetCellValue(item.Empresa_Equipo);
+
+                            j++;
+                       // }
+                }
+
+
+                int numberOfColumns = excelSheet.GetRow(1).PhysicalNumberOfCells;
+                for (int i = 1; i <= numberOfColumns; i++)
+                {
+                    excelSheet.AutoSizeColumn(i);
+                    GC.Collect(); // Add this line
+                }
+                workbook.Write(fs);
+                fs.Close();
+            }
+        
+
+        
+        var archivo=file.OpenRead();
+
+        var empresaNameFormated= RemoveDiacritics(empresa);
+
+        Context.ReturnFile(archivo, string.Format("Inventario_Plano_{0}.xlsx",empresaNameFormated), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
      }
 
         #endregion

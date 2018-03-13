@@ -36,6 +36,7 @@
 
       <PackageReference Include="EPPlus.Core" Version="1.5.4" />
     <PackageReference Include="PdfRpt.Core" Version="1.1.4"/>
+    <!--Excell-->
     <PackageReference Include="DotNetCore.NPOI " Version="1.0.2"/>
     <PackageReference Include="CoreCompat.System.Drawing.v2 " Version="5.2.0-preview1-r131"/>
   

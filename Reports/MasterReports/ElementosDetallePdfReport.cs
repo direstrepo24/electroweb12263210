@@ -248,7 +248,7 @@ namespace electroweb.Reports.MasterReports
 																					<td width='10%'>{10}</td>
 																					<td style='font-size:4pt;font-family:tahoma;' width='20%'>{11}</td>
 																				</tr>
-																			</table>",ciudad,detalle_elemento.Elemento_Id,detalle_elemento.CodigoApoyo,detalle_elemento.Longitud,detalle_elemento.Nombre_Estado,detalle_elemento.Valor_Nivel_Tension,detalle_elemento.AlturaDisponible,detalle_elemento.ResistenciaMecanica,detalle_elemento.Nombre_Estado,detalle_elemento.Retenidas,detalle_elemento.Direccion_Elemento,detalle_elemento.Coordenadas_Elemento);
+																			</table>",ciudad,detalle_elemento.Elemento_Id,detalle_elemento.CodigoApoyo,detalle_elemento.Longitud,detalle_elemento.Nombre_Estado,detalle_elemento.Valor_Nivel_Tension,detalle_elemento.AlturaDisponible,detalle_elemento.ResistenciaMecanica,detalle_elemento.Nombre_Material,detalle_elemento.Retenidas,detalle_elemento.Direccion_Elemento,detalle_elemento.Coordenadas_Elemento);
 
 													var listCables= reportElementos.Where(a=>a.Elemento_Id==long.Parse(elemento_id));
 													var tablacables= string.Format(@"

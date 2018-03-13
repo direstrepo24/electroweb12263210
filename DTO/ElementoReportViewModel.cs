@@ -172,6 +172,7 @@ namespace electroweb.DTO
 
 
           //Properties Report Exel
+        public string Empresa_Equipo {get;set;}
         public string Tiene_Amplificador {get;set;}
         public string Tiene_Fuente {get;set;}
         public string Tiene_DistribuidorFibra {get;set;}
