@@ -1294,7 +1294,9 @@ namespace electroweb.ViewModels
      public void LLenarExcelPlano()
     {
 
-        string empresa= string.Empty;
+        if(ReportElementos!=null){
+
+string empresa= string.Empty;
          
         string sWebRootFolder = _hostingEnvironment.WebRootPath;
         string sFileName = @"Inventario_Plano_.xlsx";
@@ -1476,6 +1478,7 @@ namespace electroweb.ViewModels
         
             Context.ReturnFile(archivo, string.Format("Inventario_Plano_(TODAS_LAS_EMPRESAS)_DE_{0}_A_{1}.xlsx",replaceDateStart,replaceDateEnd), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     
+        }
         }
      }
 
