@@ -717,7 +717,8 @@ namespace electroweb.ViewModels
                 } */
                 //Si es una consulta por operador se habilita
                 //Equipos     a=>a.Elemento_Id==item.Elemento_Id, b=>b.TipoEquipo,c=>c.Ciudad_Empresa, d=>d.Ciudad_Empresa.Empresa
-                if(Ciudad_Id>0 && Empresa_Id>0){
+               // if(Ciudad_Id>0 && Empresa_Id>0){
+                if(Ciudad_Id>0){
                     var equiposElementos= await _equipoElementoRepository.AllIncludingAsyncWhere(a=>a.Elemento_Id==item.Elemento_Id, b=>b.TipoEquipo,c=>c.Ciudad_Empresa, d=>d.Ciudad_Empresa.Empresa);
                     foreach(var queryequipo in equiposElementos.ToList()){
                             var mapEquipo= _mapper.Map<EquipoElemento, EquipoViewModel>(queryequipo);
@@ -747,8 +748,8 @@ namespace electroweb.ViewModels
                 viewModelMap.ConectadoRbt=ConectadoRbt;
                 viewModelMap.MedidorBt=MedidorBt;
                 viewModelMap.Otro_Equipo=Otro_Equipo;
-                 viewModelMap.NumeroApoyo= item.Elemento_Id;
-                  viewModelMap.Empresa_Equipo= Empresa_Equipo;
+                viewModelMap.NumeroApoyo= item.Elemento_Id;
+                viewModelMap.Empresa_Equipo= Empresa_Equipo;
                 list.Add(viewModelMap);
             }
 
@@ -1462,9 +1463,20 @@ namespace electroweb.ViewModels
         
         var archivo=file.OpenRead();
 
-        var empresaNameFormated= RemoveDiacritics(empresa);
+        string date_start_report = String.Format("{0:dd/MM/yyyy}", SelectedDateStart);
+        string date_end_report = String.Format("{0:dd/MM/yyyy}", SelectedDateEnd);
+        
+        string replaceDateStart=date_start_report.Replace("/","_");
+        string replaceDateEnd=date_end_report.Replace("/","_");
 
-        Context.ReturnFile(archivo, string.Format("Inventario_Plano_{0}.xlsx",empresaNameFormated), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        if(Empresa_Id>0){
+            var empresaNameFormated= RemoveDiacritics(empresa);
+            Context.ReturnFile(archivo, string.Format("Inventario_Plano_{0}_DE_{1}_A_{2}.xlsx",empresaNameFormated,replaceDateStart,replaceDateEnd), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        }else{
+        
+            Context.ReturnFile(archivo, string.Format("Inventario_Plano_(TODAS_LAS_EMPRESAS)_DE_{0}_A_{1}.xlsx",replaceDateStart,replaceDateEnd), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+    
+        }
      }
 
         #endregion
