@@ -359,30 +359,31 @@ namespace electroweb.ViewModels
                            Recaudo_Longitud=cantidadOcupacionesLongitud*37806;
                            Longitud_Elemento=6;
                       }else if(itemlongitud.Valor==8){
-                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*37806;
-                             ValorAnualNorma=string.Format("$ {0}",37.806);
-                              Recaudo_Longitud=cantidadOcupacionesLongitud*37806;
+                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*38952;
+                             ValorAnualNorma=string.Format("$ {0}",38.952);
+                              Recaudo_Longitud=cantidadOcupacionesLongitud*38952;
                                  Longitud_Elemento=8;
                       }
                       else if(itemlongitud.Valor==10){
-                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*42531;
-                             ValorAnualNorma=string.Format("$ {0}",42.531);
-                              Recaudo_Longitud=cantidadOcupacionesLongitud*42531;
+                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*43824;
+                             ValorAnualNorma=string.Format("$ {0}",43.824);
+                              Recaudo_Longitud=cantidadOcupacionesLongitud*43824;
                                Longitud_Elemento=10;
                       }else if(itemlongitud.Valor==12){
-                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*47256;
-                             ValorAnualNorma=string.Format("$ {0}",47.256);
-                              Recaudo_Longitud=cantidadOcupacionesLongitud*47256;
+                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*48696;
+                             ValorAnualNorma=string.Format("$ {0}",48.696);
+                              Recaudo_Longitud=cantidadOcupacionesLongitud*48696;
                                  Longitud_Elemento=12;
                       }else if(itemlongitud.Valor==14 ){
-                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*73596;
-                            ValorAnualNorma=string.Format("$ {0}",73.596);
-                               Recaudo_Longitud=cantidadOcupacionesLongitud*73596;
-                                  Longitud_Elemento=14;                      }
+                           SumaTotalRecaudo+=cantidadOcupacionesLongitud*75828;
+                            ValorAnualNorma=string.Format("$ {0}",75.828);
+                               Recaudo_Longitud=cantidadOcupacionesLongitud*75828;
+                                  Longitud_Elemento=14;                      
+                        }
                       else if(itemlongitud.Valor==16 ){
-                            SumaTotalRecaudo+=cantidadOcupacionesLongitud*73596;
-                            ValorAnualNorma=string.Format("$ {0}",73.596);
-                            Recaudo_Longitud=cantidadOcupacionesLongitud*73596;
+                            SumaTotalRecaudo+=cantidadOcupacionesLongitud*86664;
+                            ValorAnualNorma=string.Format("$ {0}",86.664);
+                            Recaudo_Longitud=cantidadOcupacionesLongitud*86664;
                             Longitud_Elemento=16;
                       }
 
